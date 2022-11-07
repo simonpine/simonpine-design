@@ -1,23 +1,13 @@
-import logo from './logo.svg';
+import logo from './img/logo1.svg';
 import './App.css';
+import Nav from './components/nav';
+
+const cartItems = ['one', 'two', 'tree']
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav ite={cartItems.length} />
     </div>
   );
 }
