@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700|Eczar:400,700");
+html{
+  background-color: #111111;
+}
+html::-webkit-scrollbar{
+  width: 5px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +15,7 @@
   background-color: #111111;
   min-height: 100vh;
   width: 100%;
+  height: auto;
 }
 .nav {
   height: 100px;
@@ -70,6 +77,8 @@ ul {
 .cart{
   padding-left: 10px;
   border-left: 1px solid #ffff;
+  border: none;
+  background: none;
 }
 .red{
   font-size: 15px;
@@ -82,4 +91,11 @@ ul {
   transform: rotate(90deg);
   position: absolute;
 }
+.productContainer{
+  position:absolute;
+  right: 0px;
+  width: 90vw;
+  min-height: 100vh;
+}
+
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */

@@ -1,10 +1,10 @@
 import cart from '../img/shopping-cart.png';
 function Cart ({ numItem }){
     return(
-        <span className='cart'>
+        <button className='cart'>
             <img src={cart} className='socialMedia'/>
             <span className='red'>{numItem}</span>
-        </span>
+        </button>
         
     )
 }
