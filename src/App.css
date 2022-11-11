@@ -97,5 +97,42 @@ ul {
   width: 90vw;
   min-height: 100vh;
 }
-
+.lds-dual-ring {
+  z-index: 100;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading{
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #22222286;
+  backdrop-filter: blur(5px);
+}
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */
