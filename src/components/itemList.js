@@ -5,7 +5,7 @@ const ProductsTest =  [{
     title: "Logo design",
     description: "A custom logo for your brand, made according to your preferences",
     price: "from US$99",
-    pictureUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBGV2vdDAsYf-_tSuW5emSubQzUVi2g4X6SUlFWFXm0CzTZwMMxyRWZcUaWLcX4CDNQlA&usqp=CAU",
+    pictureUrl: "https://i.pinimg.com/736x/ee/fd/d6/eefdd6fd8889659dd4a5ba0a40b718bd.jpg",
     stock:12,
 },
 {
@@ -21,7 +21,7 @@ const ProductsTest =  [{
     title: "Logo & business card",
     description: "A custom and unique card to build different connections",
     price: "from US$249",
-    pictureUrl: "https://www.kibrispdr.org/data/750/logo-gambar-huruf-m-59.jpg",
+    pictureUrl: "https://images.all-free-download.com/images/graphiclarge/logo_templates_word_sketch_flat_design_6853586.jpg",
     stock: 11,
 },
 {
@@ -31,7 +31,8 @@ const ProductsTest =  [{
     price: "from US$199",
     pictureUrl: "https://i.pinimg.com/736x/ee/fd/d6/eefdd6fd8889659dd4a5ba0a40b718bd.jpg",
     stock: 4,
-}]
+},
+]
 function ItemList(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
