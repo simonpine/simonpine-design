@@ -76,9 +76,9 @@ ul {
 }
 .cart{
   padding-left: 10px;
-  border-left: 1px solid #ffff;
   border: none;
   background: none;
+  border-left: 1px solid #ffff;
 }
 .red{
   font-size: 15px;
@@ -93,9 +93,12 @@ ul {
 }
 .productContainer{
   position:absolute;
-  right: 0px;
-  width: 90vw;
-  min-height: 100vh;
+  right: 10vw;
+  width: 80vw;
+  min-height: 97vh;
+  top:3vh;
+  display: flex;
+  justify-content: space-between;
 }
 .lds-dual-ring {
   z-index: 100;
@@ -134,5 +137,49 @@ ul {
   height: 100vh;
   background-color: #22222286;
   backdrop-filter: blur(5px);
+}
+.imgCard{
+  position: relative;
+  height: 60%;
+  transition: 1s;
+}
+.card:hover .imgCard{
+  opacity:0.5;
+  height: 87%;
+  width: auto;
+  filter: blur(4px);
+}
+.card{
+  display: flex;
+  width: 300px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #181818;
+  box-shadow: rgba(22, 22, 22, 0.2) 0px 8px 24px;
+}
+.titleCard{
+  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font-size: 14px;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: ease;
+  transition: 1s;
+  padding-bottom: 4px;
+  opacity:0.5;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: left;
+}
+.card:hover .titleCard{
+  opacity:1;
+  background-size: 50% 2px;
+}
+.textCard{
+  padding: 15px;
 }
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */

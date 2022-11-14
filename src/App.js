@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from './img/logo1.svg';
 import './App.css';
 import Nav from './components/nav';
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Nav ite={cartItems.length} />
-      <ItemList greeting={greetinTest} />
+      <ItemList />
     </div>
   );
 }
