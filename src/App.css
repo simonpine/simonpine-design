@@ -30,6 +30,7 @@ html::-webkit-scrollbar{
 .has{
   width: 50%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
   font: normal 14px/17px "Alegreya Sans",sans-serif;
@@ -37,7 +38,7 @@ html::-webkit-scrollbar{
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-.has li span{
+.has li .a{
   padding-bottom: 10px;
   opacity:0.5;
   transition: 0.5s ease;
@@ -47,8 +48,9 @@ html::-webkit-scrollbar{
   background-repeat: no-repeat;
   background-size: 0% 2px;
   cursor: pointer;
+  text-decoration: none;
 }
-.has li span:hover{
+.has li .a:hover{
   opacity:1;
   background-size: 50% 2px;
 }
@@ -131,13 +133,12 @@ ul {
   }
 }
 .loading{
-  left: 0;
+  right: 0;
   top: 0;
   position: fixed;
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
-  background-color: #22222286;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(1px);
 }
 .imgCard{
   position: relative;

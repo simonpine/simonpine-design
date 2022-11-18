@@ -1,18 +1,12 @@
-import { useState } from "react";
-import logo from './img/logo1.svg';
 import './App.css';
-import Nav from './components/nav';
-import ItemList from './components/itemList';
-
-const cartItems = ['one', 'two', 'tree']
-const greetinTest = 'hola a todas las personas'
+import Layout from "./components/layout";
+import { cartItems } from "./mocks/cart.mock";
 
 function App() {
   return (
-    <div className="App">
-      <Nav ite={cartItems.length} />
-      <ItemList />
-    </div>
+    <Layout a={'1'} b={cartItems.length}>
+        <h1>hola</h1>
+    </Layout>
   );
 }
 

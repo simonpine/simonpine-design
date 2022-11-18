@@ -1,0 +1,1 @@
+export const cartItems = ['one', 'two', 'tree']

@@ -1,9 +1,26 @@
+import { useState } from "react";
 import Cart from './cart.js';
 import logo from '../img/logo1.svg';
 import insta from '../img/insta.png';
 import twi from '../img/twitter.png';
 import git from '../img/facebook.png';
-function Nav({ ite }) {
+import {Link} from 'react-router-dom'
+function Nav({ ite, main }) {
+    const one = {}
+    const two = {}
+    const tree = {}
+    if(main == 1){
+        one.opacity = "1"
+        one.backgroundSize = "50% 2px"
+    }
+    else if (main == 2){
+        two.opacity = "1"
+        two.backgroundSize = "50% 2px"
+    }
+    else{
+        tree.opacity = "1"
+        tree.backgroundSize = "50% 2px"
+    }
     return(
         <nav className="nav">
                 <ul className="tig">
@@ -23,18 +40,26 @@ function Nav({ ite }) {
                         </a>
                     </li>
                     <li>
-                        <img src={logo} alt="instagram logo" className='socialMedia'/>
+                        <a href="https://simonpine.com/" target="_blank">
+                            <img src={logo} alt="instagram logo" className='socialMedia'/>
+                        </a>
                     </li>
                 </ul>
                 <ul className="has">
                     <li>
-                        <span>Home</span>
+                        <Link className="a"  to={{
+                            pathname:"/",
+                        }}  style={one} >Home</Link>
                     </li>
                     <li>
-                        <span>About</span>
+                        <Link className="a" to={{
+                            pathname:"/About",
+                        }}  style={two} >About</Link>
                     </li>
                     <li>
-                        <span>Store</span>
+                        <Link className="a" to={{
+                            pathname:"/Store",
+                        }}  style={tree} >Store</Link>
                     </li>
                 </ul>
                 <Cart numItem={ite} />
