@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Cart from './cart.js';
 import logo from '../img/logo1.svg';
 import insta from '../img/insta.png';

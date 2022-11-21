@@ -60,5 +60,23 @@ export const ProductsTest =  [{
     pictureUrl: "https://i.pinimg.com/736x/ee/fd/d6/eefdd6fd8889659dd4a5ba0a40b718bd.jpg",
     stock: 4,
     category:'individual',
+},
+{
+    id: "008",
+    title: "Brand guide",
+    description: "A comprehensive guide of your brand's fonts, colors and style",
+    price: "from US$199",
+    pictureUrl: "https://i.pinimg.com/736x/ee/fd/d6/eefdd6fd8889659dd4a5ba0a40b718bd.jpg",
+    stock: 6,
+    category:'individual',
+},
+{
+    id: "009",
+    title: "Stationery",
+    description: "Letterhead and envelopes that send your brand's message",
+    price: "from US$199",
+    pictureUrl: "https://i.pinimg.com/736x/ee/fd/d6/eefdd6fd8889659dd4a5ba0a40b718bd.jpg",
+    stock: 9,
+    category:'individual',
 }
 ]

@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700|Eczar:400,700");
 html{
-  background-color: #111111;
+  background:url(./img/bg.png) center center repeat fixed;
 }
 html::-webkit-scrollbar{
-  width: 5px;
+  width: 2px;
+}
+html::-webkit-scrollbar-track {
+  background-color: #0c0c0c;
+}
+html::-webkit-scrollbar-thumb {
+  background:#BF9B6F; 
+  border-radius: 5px;
 }
 * {
   margin: 0;
@@ -12,17 +19,13 @@ html::-webkit-scrollbar{
 }
 .App {
   text-align: center;
-  background:url(./img/bg.png) center center repeat fixed;
-  min-height: 100vh;
-  width: 100%;
-  height: auto;
 }
 .nav {
   height: 100px;
   width: 100vh;
   position:fixed;
-  left: -18%;
-  transform: rotate(-90deg) translate(-45%, -50%);
+  left: 0px;
+  transform: rotate(-90deg) translate(-45%, -43vh);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -142,7 +145,7 @@ ul {
 }
 .imgCard{
   position: relative;
-  height: 67%;
+  height: 80%;
   transition: 1s;
 }
 .card:hover .imgCard{
@@ -154,14 +157,14 @@ ul {
 .card{
   display: flex;
   width: 300px;
-  height: 450px;
+  height: 380px;
   border-radius: 20px;
   overflow: hidden;
   align-items: flex-start;
   flex-direction: column;
   background-color: #0c0c0c;
   box-shadow: rgba(105, 105, 105, 0.2) 0px 8px 24px;
-  margin: 0px 20px;
+  margin: 10px 20px;
   margin-bottom: 20px;
   transition: 0.5s;
 }
@@ -209,12 +212,124 @@ ul {
   position:absolute;
   transition: 0.5s;
   z-index: 10;
-  width: 300px;
-  height: 350px;
+  width: 260px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 .card:hover .hoverCard{
   opacity: 1;
   transition: 1s;
+}
+.homeContainer{
+  position:absolute;
+  right: 10vw;
+  width: 80vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1{
+  text-align: left;
+  width: 440px;
+  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font-size: 60px;
+  color: #BF9B6F;
+  line-height: 1.1;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+  background-size: 15% 15px;
+}
+.logoTitle{
+  width: 350px;
+}
+.title{
+  margin: 20% 0 20% 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.pTitle{
+  margin-top: 20px;
+  text-align: justify;
+  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font-size: 20px;
+  word-spacing: 5px;
+}
+.first{
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.buyNow{
+  margin-top: 15px;
+  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  color: #BF9B6F;
+  transition: 1s ease;
+}
+.buyNow:hover{
+  background-position: 0% 100%;
+  background-size: 100% 1px;
+}
+.exampleImage{
+  width: 200px;
+  border-radius: 20px;
+  margin: 20px 100px 20px 100px;
+}
+.secondTitle{
+  width: fit-content;
+  position: relative;
+  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font-size: 60px;
+  color: #BF9B6F;
+  text-align: left;
+  left: 15%;
+}
+.examples{
+  margin-bottom: 13%;
+}
+.itemId{
+  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font-size: 25px;
+  word-spacing: 5px;
+  text-align: left;
+  font-weight: 900;
+}
+.mainButton{
+  width: 170px;
+}
+.buttonHover{
+  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  word-spacing: 5px;
+  text-align: left;
+  font-weight: 900;
+  background: none;
+  border: #fff 1px solid;
+  border-radius: 10px 0px 0px 10px;
+  padding: 7px 18px 7px 18px;
+  cursor: pointer;
+}
+.buttonHover:hover{
+  opacity: 0.8;
+  background-color: #BF9B6F;
+}
+.secondButton{
+  border-radius: 0px;
+}
+.buttonOne{
+  border-radius: 0px 10px 10px 0px;
 }
 
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */
