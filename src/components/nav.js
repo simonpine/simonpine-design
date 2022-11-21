@@ -1,4 +1,4 @@
-import Cart from './cart.js';
+import Cart from './cart';
 import logo from '../img/logo1.svg';
 import insta from '../img/insta.png';
 import twi from '../img/twitter.png';

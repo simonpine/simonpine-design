@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 function Items({ props }){
     const [actualCart, setActualCart] = useState(0)
     function lessStock(){
@@ -18,6 +19,13 @@ function Items({ props }){
         <div className="card">
             <div className="hoverCard">
                 <h3 className="itemId">Item #{props.id}</h3>
+                <Link className="more"
+                to={{
+                    pathname:`/Store/Item/${props.id}`,
+                }}
+                >
+                    More
+                </Link>
                 <div>
                     <button className="mainButton buttonHover" onClick={addToCart}>Add to the cart {actualCart}</button>
                     <button className="secondButton buttonHover" onClick={lessStock} >-</button>
