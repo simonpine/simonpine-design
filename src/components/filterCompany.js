@@ -1,7 +1,7 @@
 import {useState} from 'react'
 function FilterByCompany(props){
-    function changeValue(){
-        props.hola(company.value)
+    const changeValue = ( evt ) => {
+        props.otherCompany(evt.target.value)
     }
     return(
         <select id="company" className='companysContainer' onChange={changeValue}>

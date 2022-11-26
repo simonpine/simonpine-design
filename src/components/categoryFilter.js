@@ -37,8 +37,8 @@ function CategoryFilter({ main }){
         seven.opacity = "1"
         seven.backgroundSize = "50% 2px"
     }
-    function hola(evt){
-        console.log(evt)
+    function otherCompany(com){
+        console.log(com)
     }
     return(
     <div>
@@ -111,7 +111,7 @@ function CategoryFilter({ main }){
             </li>
             <li>
                 <h2 className='b2'>company:</h2>
-                <FilterByCompany hola={hola}/>
+                <FilterByCompany otherCompany={otherCompany}/>
             </li>
         </ul>
     </div>
