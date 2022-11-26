@@ -103,7 +103,7 @@ ul {
   min-height: 97vh;
   top:3vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .lds-dual-ring {
@@ -146,6 +146,7 @@ ul {
 .imgCard{
   position: relative;
   height: 80%;
+  min-width: 100%;
   transition: 1s;
 }
 .card:hover .imgCard{
@@ -164,7 +165,7 @@ ul {
   flex-direction: column;
   background-color: #0c0c0c;
   box-shadow: rgba(105, 105, 105, 0.2) 0px 8px 24px;
-  margin: 10px 20px;
+  margin: 10px 33px;
   margin-bottom: 20px;
   transition: 0.5s;
 }
