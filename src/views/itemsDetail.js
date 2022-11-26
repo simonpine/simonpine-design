@@ -5,6 +5,20 @@ import { cartItems } from "../mocks/cart.mock";
 import Layout from "../components/layout";
 import CategoryFilter from "../components/categoryFilter";
 function ItemDetail(){
+    const [actualCart, setActualCart] = useState(0)
+    function lessStock(){
+        if(actualCart != 0){
+            setActualCart(actualCart - 1)
+        }
+    }
+    function moreStock(){
+        if(actualCart < product.stock){
+            setActualCart(actualCart + 1)
+        }
+    }
+    function addToCart(){
+        
+    }
     const params = useParams()
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
@@ -25,7 +39,12 @@ function ItemDetail(){
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
             <h1>{product.title}</h1>
             <h2>{product.description}</h2>
-            
+            <div>
+                <button className="mainButton buttonHover" onClick={addToCart}>Add to the cart {actualCart}</button>
+                <button className="secondButton buttonHover" onClick={lessStock} >-</button>
+                <button className="secondButton buttonHover buttonOne" onClick={moreStock} >+</button>
+            </div>
+            <img src={product.pictureUrl}/>
         </section>
     </Layout>
     )

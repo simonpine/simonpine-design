@@ -16,7 +16,8 @@ function ItemListCate(){
     <section className="productContainer">
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
             {products.map((product) => {
-            if(params.category == product.category){return <Items props={product}/>}
+            if (params.category == 'All'){return <Items props={product}/>}
+            else if(params.category == product.category){return <Items props={product}/>}
             })}
     </section>
     )

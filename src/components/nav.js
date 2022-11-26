@@ -57,7 +57,7 @@ function Nav({ ite, main }) {
                     </li>
                     <li>
                         <Link className="a" to={{
-                            pathname:"/Store",
+                            pathname:"/Store/All",
                         }}  style={tree} >Store</Link>
                     </li>
                 </ul>

@@ -98,7 +98,7 @@ ul {
 }
 .productContainer{
   position:absolute;
-  right: 10vw;
+  left: 7vw;
   width: 80vw;
   min-height: 97vh;
   top:3vh;
@@ -218,7 +218,8 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  align-items: center
+  align-items: center;
+  justify-content: center;
 }
 .card:hover .hoverCard{
   opacity: 1;
@@ -355,10 +356,15 @@ h1{
   width: 100vh;
   position:fixed;
   right: 0px;
-  transform: rotate(90deg)  translate(45%, -43vh);
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  height: 90vh;
+  top: 3vh;
+  width: 200px;
+  position:fixed;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .categoryFilter{
   font: normal 14px/17px "Alegreya Sans",sans-serif;
@@ -377,7 +383,9 @@ h1{
   transition: 1s;
   padding-bottom: 10px;
 }
-
+.categoryFilter li{
+  margin: 10px;
+}
 .b:hover{
 opacity:1;
 background-size: 50% 2px;
@@ -396,29 +404,38 @@ background-size: 50% 2px;
   align-items: flex-start;
 }
 .more{
-  text-decoration: none;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
-  color: #BF9B6F;
-  font-size: 15px;
-  letter-spacing: 2px;
-  font-weight: 900;
-  text-align: left;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background: linear-gradient(#BF9B6F, #BF9B6F);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  width: fit-content;
-  padding-bottom: 3px;
-  transition: 1s;
+  padding: 60px 10px 60px 10px;
+  transition: 0.5s;
+  opacity: 0.5;
+  width: 100%;
+  height: 20%;
+
+}
+.more img{
+  width: 35px;
 }
 .more:hover{
-  background-size: 50% 2px;
+  opacity: 1;
 }
 .loading2{
   position: relative;
   height: 300px;
 }
-
+.companys{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: #0c0c0c;
+}
+.companysContainer{
+  margin-top: 10px;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: #0c0c0c;
+  border-radius: 5px;
+  border: 1px solid #BF9B6F;
+}
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */

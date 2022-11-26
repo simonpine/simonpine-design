@@ -1,8 +1,14 @@
 import {Link} from 'react-router-dom'
+import FilterByCompany from './filterCompany.js'
+
 function CategoryFilter({ main }){
     const one = {}
     const two = {}
     const tree = {}
+    const four = {}
+    const five = {}
+    const six = {}
+    const seven = {}
     if(main == 1){
         one.opacity = "1"
         one.backgroundSize = "50% 2px"
@@ -11,42 +17,101 @@ function CategoryFilter({ main }){
         two.opacity = "1"
         two.backgroundSize = "50% 2px"
     }
-    else{
+    else if (main == 3){
         tree.opacity = "1"
         tree.backgroundSize = "50% 2px"
+    }
+    else if (main == 4){
+        four.opacity = "1"
+        four.backgroundSize = "50% 2px"
+    }
+    else if (main == 5){
+        five.opacity = "1"
+        five.backgroundSize = "50% 2px"
+    }
+    else if (main == 6){
+        six.opacity = "1"
+        six.backgroundSize = "50% 2px"
+    }
+    else{
+        seven.opacity = "1"
+        seven.backgroundSize = "50% 2px"
+    }
+    function hola(evt){
+        console.log(evt)
     }
     return(
     <div>
         <ul className="categoryFilter">
             <li>
-                <h2 className='b2'>Filter by:</h2>
+                <h2 className='b2'>Category:</h2>
             </li>
             <li>
                 <Link className='b' 
                 to={{
-                    pathname:"/Store/Category/combos",
+                    pathname:"/Store/Office",
                 }} style={one}
                 >
-                    Combos                        
+                    Office                        
                 </Link>
             </li>
             <li>
                 <Link className='b'
                 to={{
-                    pathname:"/Store/Category/individual",
+                    pathname:"/Store/Living Room",
                 }} style={two}
                 >
-                    Individual                        
+                    Living Room                        
                 </Link>
             </li>
             <li>
                 <Link className='b'
                 to={{
-                    pathname:"/Store",
+                    pathname:"/Store/Kitchen",
                 }} style={tree}
+                >
+                    Kitchen                        
+                </Link>
+            </li>
+            <li>
+                <Link className='b'
+                to={{
+                    pathname:"/Store/Bedroom",
+                }} style={four}
+                >
+                    Bedroom                        
+                </Link>
+            </li>
+            <li>
+                <Link className='b'
+                to={{
+                    pathname:"/Store/Dining",
+                }} style={five}
+                >
+                    Dining                        
+                </Link>
+            </li>
+            <li>
+                <Link className='b'
+                to={{
+                    pathname:"/Store/Kids",
+                }} style={six}
+                >
+                    Kids                        
+                </Link>
+            </li>
+            <li>
+                <Link className='b'
+                to={{
+                    pathname:"/Store/All",
+                }} style={seven}
                 >
                     All                        
                 </Link>
+            </li>
+            <li>
+                <h2 className='b2'>company:</h2>
+                <FilterByCompany hola={hola}/>
             </li>
         </ul>
     </div>
