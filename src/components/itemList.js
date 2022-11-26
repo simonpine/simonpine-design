@@ -12,7 +12,7 @@ function ItemList(){
     }, [Items])
     return(
     <section className="productContainer">
-            {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
+            {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
             {products.map((product) => {
             return <Items props={product}/>
             })}

@@ -1,9 +1,10 @@
 import cart from '../img/shopping-cart.png';
-function Cart ({ numItem }){
+import { cartItems } from '../mocks/cart.mock';
+function Cart (){
     return(
         <button className='cart'>
             <img src={cart} className='socialMedia'/>
-            <span className='red'>{numItem}</span>
+            <span className='red'>{cartItems.length}</span>
         </button>
         
     )

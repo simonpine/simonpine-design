@@ -296,10 +296,23 @@ h1{
   font-size: 60px;
   color: #BF9B6F;
   text-align: left;
-  left: 15%;
 }
 .examples{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
   margin-bottom: 13%;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.exampleCards{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
 }
 .itemId{
   font: normal 16px/30px "Alegreya Sans",sans-serif;
@@ -403,4 +416,9 @@ background-size: 50% 2px;
 .more:hover{
   background-size: 50% 2px;
 }
+.loading2{
+  position: relative;
+  height: 300px;
+}
+
 /* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */

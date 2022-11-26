@@ -1,12 +1,23 @@
 import './App.css';
+import { useEffect, useState } from 'react'
 import Layout from "./components/layout";
-import { cartItems } from "./mocks/cart.mock";
 import logo from './img/logo1.svg'
 import {Link} from 'react-router-dom'
-import { ExamplesWork } from './mocks/examples.mock'
+import React from 'react';
+import Items from './components/items';
+import { ProductsTest } from './mocks/item.mock'
 function App() {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const productsFromApi = new Promise((resolve) => {  setTimeout(()=>{resolve(ProductsTest)}, 2000)})
+  useEffect(()=>{
+      productsFromApi.then((data) => {
+          setProducts(data)
+      }).then((data)  => setLoading(!!data))
+  }, [])
+  let i
   return (
-    <Layout a={'1'} b={cartItems.length}>
+    <Layout a={'1'}>
         <div className='homeContainer'>
           <div className='title'>
             <div className='first'>
@@ -21,10 +32,17 @@ function App() {
             <img src={logo} alt="SimonPine logo" className='logoTitle'/>        
           </div>
           <div className='examples'>
-              <h2 className='secondTitle'>Examples</h2>
-              {ExamplesWork.map((example)=>{
-                return <img className='exampleImage' src={example.pictureUrl} />
+            <h2 className='secondTitle'>Examples</h2>
+            <div className='exampleCards'>
+            {loading && <div className="loading2"><div className="lds-dual-ring"></div></div>}
+              {products.map((product) => {
+                if ((product.id == '001' || product.id == '002' ) || (product.id == '003')){
+                  return(
+                    <Items props={product}/>
+                  )
+                }
               })}
+            </div>
           </div>
         </div>
     </Layout>
