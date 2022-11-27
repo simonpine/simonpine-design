@@ -304,7 +304,7 @@ h1{
   align-items: center;
   position: relative;
   margin-bottom: 13%;
-  width: 90%;
+  width: 100%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -312,7 +312,7 @@ h1{
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   justify-content: center;
 }
 .itemId{

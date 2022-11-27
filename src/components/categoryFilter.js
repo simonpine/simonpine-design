@@ -1,5 +1,7 @@
+import { createContext } from 'react'
 import {Link} from 'react-router-dom'
 import FilterByCompany from './filterCompany.js'
+import { Context } from '../context/companyContext'
 
 function CategoryFilter({ main }){
     const one = {}
@@ -36,9 +38,6 @@ function CategoryFilter({ main }){
     else{
         seven.opacity = "1"
         seven.backgroundSize = "50% 2px"
-    }
-    function otherCompany(com){
-        console.log(com)
     }
     return(
     <div>
@@ -109,10 +108,21 @@ function CategoryFilter({ main }){
                     All                        
                 </Link>
             </li>
-            <li>
-                <h2 className='b2'>company:</h2>
-                <FilterByCompany otherCompany={otherCompany}/>
-            </li>
+            <Context.Consumer>
+                {({ setTheCompany }) => {
+
+                    function otherCompany(com){
+                        setTheCompany(com)
+                    }
+
+                    return(
+                    <li>
+                        <h2 className='b2'>company:</h2>
+                        <FilterByCompany otherCompany={otherCompany}/>
+                    </li>
+                    )
+                }}
+            </Context.Consumer>
         </ul>
     </div>
     )

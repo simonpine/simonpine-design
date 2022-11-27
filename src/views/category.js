@@ -3,6 +3,7 @@ import { cartItems } from "../mocks/cart.mock";
 import ItemListCate from "../components/ItemListCate";
 import CategoryFilter from "../components/categoryFilter";
 import { useParams } from "react-router-dom";
+import { Actualcompany } from '../context/companyContext'
 function Category (){
     const params = useParams()
     let o;
@@ -14,8 +15,10 @@ function Category (){
     else if(params.category == 'Kids'){o = 6}
     return (
         <Layout a={'3'} b={cartItems.length}>
-        <CategoryFilter  main={o}/>
-        <ItemListCate />
+            <Actualcompany>
+                <CategoryFilter  main={o}/>
+                <ItemListCate />  
+            </Actualcompany>
         </Layout>
     )
 }
