@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Items from './items.js';
 import { ProductsTest } from '../mocks/item.mock'
 import { Context } from '../context/companyContext'
+import { Context2 } from '../context/priceContext'
 
 function ItemListCate(){
     const [products, setProducts] = useState([])
@@ -20,19 +21,26 @@ function ItemListCate(){
         <Context.Consumer>
         {({ theCompany }) => {
             return(
-                <section className="productContainer">
-                {products.map((product) => {
-                    if(theCompany == 'all'){
-                        if (params.category == 'All'){return <Items props={product}/>}
-                        else if(params.category == product.category){return <Items props={product}/>}
-                    }
-                    else if(theCompany == product.company){
-                        if (params.category == 'All'){return <Items props={product}/>}
-                        else if(params.category == product.category){return <Items props={product}/>}
-                    }
-                    })
-                }
-                </section>
+                <Context2.Consumer>
+                {({ maxprice }) => {
+                    return(
+                        <section className="productContainer">
+                        {products.map((product) => {
+                            if(!(+product.price > maxprice)){ 
+                            if(theCompany == 'all'){
+                                if (params.category == 'All'){return <Items props={product}/>}
+                                else if(params.category == product.category){return <Items props={product}/>}
+                            }
+                            else if(theCompany == product.company){
+                                if (params.category == 'All'){return <Items props={product}/>}
+                                else if(params.category == product.category){return <Items props={product}/>}
+                            }}
+                            })
+                        }
+                        </section>
+                    )
+                }}
+                </Context2.Consumer>
             )
         }}
         </Context.Consumer>

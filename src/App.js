@@ -15,7 +15,9 @@ function App() {
           setProducts(data)
       }).then((data)  => setLoading(!!data))
   }, [])
-  let i
+  const a = (Math.ceil(Math.random()*23))
+  const b = (Math.ceil(Math.random()*23))
+  const c = (Math.ceil(Math.random()*23))
   return (
     <Layout a={'1'}>
         <div className='homeContainer'>
@@ -36,7 +38,7 @@ function App() {
             <div className='exampleCards'>
             {loading && <div className="loading2"><div className="lds-dual-ring"></div></div>}
               {products.map((product) => {
-                if ((product.id == '001' || product.id == '002' ) || (product.id == '003')){
+                if ((product.id == a || product.id == b ) || (product.id == c)){
                   return(
                     <Items props={product}/>
                   )

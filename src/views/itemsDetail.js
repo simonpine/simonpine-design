@@ -4,6 +4,7 @@ import { ProductsTest } from '../mocks/item.mock'
 import { cartItems } from "../mocks/cart.mock";
 import Layout from "../components/layout";
 import CategoryFilter from "../components/categoryFilter";
+import {Link} from 'react-router-dom'
 function ItemDetail(){
     const [actualCart, setActualCart] = useState(0)
     function lessStock(){
@@ -34,7 +35,6 @@ function ItemDetail(){
     }, [])
     return(
     <Layout a={'3'} b={cartItems.length}> 
-        <CategoryFilter />   
         <section className="itemDatail">
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
             <h1>{product.title}</h1>
@@ -46,6 +46,13 @@ function ItemDetail(){
             </div>
             <img src={product.pictureUrl}/>
         </section>
+        <Link className='b'
+                to={{
+                    pathname:"/Store/All",
+                }}
+                >
+                    volver                        
+                </Link>
     </Layout>
     )
 }

@@ -16,7 +16,7 @@ function Items({ props }){
             <img className="imgCard" src={props.pictureUrl} />
             <div className="textCard">
                 <h2 className="titleCard">{props.title}</h2>
-                <h3 className="informationCard">{props.price}</h3>
+                <h3 className="informationCard">Price: ${props.price}</h3>
             </div>
         </div>
     )

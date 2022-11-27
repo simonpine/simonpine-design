@@ -1,7 +1,9 @@
 import { createContext } from 'react'
 import {Link} from 'react-router-dom'
 import FilterByCompany from './filterCompany.js'
+import FilterByPrice from './priceFilter.js'
 import { Context } from '../context/companyContext'
+import { Context2 } from '../context/priceContext'
 
 function CategoryFilter({ main }){
     const one = {}
@@ -44,6 +46,15 @@ function CategoryFilter({ main }){
         <ul className="categoryFilter">
             <li>
                 <h2 className='b2'>Category:</h2>
+            </li>
+            <li>
+                <Link className='b'
+                to={{
+                    pathname:"/Store/All",
+                }} style={seven}
+                >
+                    All                        
+                </Link>
             </li>
             <li>
                 <Link className='b' 
@@ -99,15 +110,6 @@ function CategoryFilter({ main }){
                     Kids                        
                 </Link>
             </li>
-            <li>
-                <Link className='b'
-                to={{
-                    pathname:"/Store/All",
-                }} style={seven}
-                >
-                    All                        
-                </Link>
-            </li>
             <Context.Consumer>
                 {({ setTheCompany }) => {
 
@@ -115,7 +117,7 @@ function CategoryFilter({ main }){
                         setTheCompany(com)
                     }
 
-                    return(
+                return(
                     <li>
                         <h2 className='b2'>company:</h2>
                         <FilterByCompany otherCompany={otherCompany}/>
@@ -123,6 +125,22 @@ function CategoryFilter({ main }){
                     )
                 }}
             </Context.Consumer>
+            <Context2.Consumer>
+                {({ setmaxprice, maxprice }) => {
+
+                function otherPrice(com){
+                    setmaxprice(com)
+                }
+
+                return(
+                    <li>
+                        <h2 className='b2'>max price:</h2>
+                        <h2 className='b3'>${maxprice}</h2>
+                        <FilterByPrice otherPrice={otherPrice}/>
+                    </li>
+                    )
+                }}
+            </Context2.Consumer>
         </ul>
     </div>
     )
