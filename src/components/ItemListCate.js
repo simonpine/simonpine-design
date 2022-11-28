@@ -4,6 +4,7 @@ import Items from './items.js';
 import { ProductsTest } from '../mocks/item.mock'
 import { Context } from '../context/companyContext'
 import { Context2 } from '../context/priceContext'
+import { Context3 } from '../context/nameContext'
 
 function ItemListCate(){
     const [products, setProducts] = useState([])
@@ -17,28 +18,51 @@ function ItemListCate(){
     const params = useParams()
     return(
         <div>
-        {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
+        {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
         <Context.Consumer>
         {({ theCompany }) => {
             return(
                 <Context2.Consumer>
                 {({ maxprice }) => {
                     return(
-                        <section className="productContainer">
-                        {products.map((product) => {
-                            if(!(+product.price > maxprice)){ 
-                            if(theCompany == 'all'){
-                                if (params.category == 'All'){return <Items props={product}/>}
-                                else if(params.category == product.category){return <Items props={product}/>}
+                    <Context3.Consumer>
+                    {({ name }) => {
+                        return(
+                            <section className="productContainer">
+                            {products.map((product) => {
+                                const title = product.title.toLowerCase()
+                                const nameLow = name.toLowerCase()
+                                if(nameLow == ''){
+                                    if(!(+product.price > maxprice)){ 
+                                        if(theCompany == 'all'){
+                                            if (params.category == 'All'){return <Items props={product}/>}
+                                            else if(params.category == product.category){return <Items props={product}/>}
+                                        }
+                                        else if(theCompany == product.company){
+                                            if (params.category == 'All'){return <Items props={product}/>}
+                                            else if(params.category == product.category){return <Items props={product}/>}
+                                        }
+                                    }
+                                }
+                                else if(title.includes(nameLow)){
+                                    if(!(+product.price > maxprice)){ 
+                                        if(theCompany == 'all'){
+                                            if (params.category == 'All'){return <Items props={product}/>}
+                                            else if(params.category == product.category){return <Items props={product}/>}
+                                        }
+                                        else if(theCompany == product.company){
+                                            if (params.category == 'All'){return <Items props={product}/>}
+                                            else if(params.category == product.category){return <Items props={product}/>}
+                                        }
+                                    }
+                                }
+                                })
                             }
-                            else if(theCompany == product.company){
-                                if (params.category == 'All'){return <Items props={product}/>}
-                                else if(params.category == product.category){return <Items props={product}/>}
-                            }}
-                            })
-                        }
-                        </section>
-                    )
+                            </section>
+                        )
+                    }}
+                    </Context3.Consumer>
+                )
                 }}
                 </Context2.Consumer>
             )

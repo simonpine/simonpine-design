@@ -2,8 +2,10 @@ import { createContext } from 'react'
 import {Link} from 'react-router-dom'
 import FilterByCompany from './filterCompany.js'
 import FilterByPrice from './priceFilter.js'
+import FilterByName from './nameFilter.js'
 import { Context } from '../context/companyContext'
 import { Context2 } from '../context/priceContext'
+import { Context3 } from '../context/nameContext'
 
 function CategoryFilter({ main }){
     const one = {}
@@ -44,6 +46,18 @@ function CategoryFilter({ main }){
     return(
     <div>
         <ul className="categoryFilter">
+            <Context3.Consumer>
+                {({ setName }) => {
+                function otherName(com){
+                    setName(com)
+                }
+                return(
+                    <li>
+                        <FilterByName otherName={otherName}/>
+                    </li>
+                    )
+                }}
+            </Context3.Consumer>
             <li>
                 <h2 className='b2'>Category:</h2>
             </li>
@@ -141,6 +155,37 @@ function CategoryFilter({ main }){
                     )
                 }}
             </Context2.Consumer>
+            <Context.Consumer>
+            {({ setTheCompany }) => {
+                return(
+                    <Context2.Consumer>
+                    {({ setmaxprice }) => {
+                        return(
+                            <Context3.Consumer>
+                            {({ setName }) => {
+                                const clearAll = (evt) => {
+                                    setTheCompany('all')
+                                    setmaxprice('3100')
+                                    setName('')
+
+                                }
+                                return(
+                                    <li>
+                                        <Link onClick={clearAll} className='b4'
+                                        to={{
+                                            pathname:"/Store/All",
+                                        }}
+                                        >clear Filters</Link>
+                                    </li>
+                                )
+                            }}
+                            </Context3.Consumer>
+                        )
+                    }}
+                    </Context2.Consumer>
+                )
+            }}
+            </Context.Consumer>
         </ul>
     </div>
     )

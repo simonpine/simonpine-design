@@ -5,6 +5,7 @@ import CategoryFilter from "../components/categoryFilter";
 import { useParams } from "react-router-dom";
 import { Actualcompany } from '../context/companyContext'
 import { ActualmaxPrice } from '../context/priceContext'
+import { Actualname } from '../context/nameContext'
 function Category (){
     const params = useParams()
     let o;
@@ -16,12 +17,14 @@ function Category (){
     else if(params.category == 'Kids'){o = 6}
     return (
         <Layout a={'3'} b={cartItems.length}>
+            <Actualname>
             <ActualmaxPrice>
             <Actualcompany>
                 <CategoryFilter  main={o}/>
                 <ItemListCate />  
             </Actualcompany>
             </ActualmaxPrice>
+            </Actualname>
         </Layout>
     )
 }

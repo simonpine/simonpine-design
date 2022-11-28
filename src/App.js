@@ -27,7 +27,7 @@ function App() {
               <p className='pTitle'>There's no one-size-fits-all when it comes to branding. No matter what stage you're at, our branding experts can bring your vision to life with creative assets that are as unique as your business.</p>
               <Link
               to={{
-                pathname:"/Store",
+                pathname:"/Store/All",
               }}
               className="buyNow" > Buy now</Link>
             </div>

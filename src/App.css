@@ -430,6 +430,7 @@ background-size: 50% 2px;
 }
 .companysContainer{
   margin-top: 10px;
+  width: 80%;
   font: normal 14px/17px "Alegreya Sans",sans-serif;
   font-size: 15px;
   text-transform: uppercase;
@@ -437,7 +438,7 @@ background-size: 50% 2px;
   background-color: #0c0c0c;
   border-radius: 5px;
   border: 1px solid #BF9B6F;
-  padding: 2px 0 2px 0;
+  padding: 5px 10px 5px 10px;
 }
 .b3{
   font-size: 15px;
@@ -462,4 +463,31 @@ input[type='range']::-webkit-slider-thumb {
   background: #BF9B6F;
   border-radius: 5px;
 }
-/* font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 ))/calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif; */
+.b4{
+  text-decoration: none;
+  color: #BF9B6F;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  color: #BF9B6F;
+  transition: 1s ease;
+  padding-bottom: 6px;
+  font-weight: 600;
+}
+.b4:hover{
+background-position: 0% 100%;
+background-size: 100% 1px;
+}
+.search{
+  background: none;
+  border: #BF9B6F 1px solid;
+  padding: 5px 10px 5px 10px;
+  width: 70%;
+  border-radius: 5px;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffff;
+}
