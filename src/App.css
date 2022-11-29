@@ -491,3 +491,96 @@ background-size: 100% 1px;
   letter-spacing: 5px;
   color: #ffff;
 }
+.productContainer:empty{
+  align-items: center;
+}
+.productContainer:empty::after{
+  position: relative;
+  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font-size: 40px;
+  color: #BF9B6F;
+  line-height: 1.1;
+  content: 'Sorry, no products matched your search.';
+  width:fit-content;
+  line-height: 1.1;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  background-size: 43% 10px;
+  text-align: left;
+  height: fit-content;
+  top: -20px;
+  z-index: -10;
+}
+.mainAbout{
+  background-position: 100% 100%;
+  font-size: 50px;
+}
+.mainImageAbout{
+  width: 300px;
+  transform: scaleX(-1);
+}
+.mainImageAbout2{
+  width: 170px;
+  transform: translate(-50%, 0%);
+}
+.containerImageAbout{
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-repeat: no-repeat;
+  background-position: 68% 40%;
+  background-size: 30px 60%;
+}
+.titleAbout{
+  margin: 30vh 0 30vh 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.cardsAbout{
+  width: 250px;
+  height: 250px;
+  background-color: #bf9b6f8c;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+
+}
+.miViHI{
+  position: relative;
+  margin: 30vh 0 30vh 0;
+  display: flex;
+  flex-wrap: wrap;
+  left: 5%;
+  width: 90%;
+  justify-content: space-evenly;
+}
+.secuImage{
+  width: 100%;
+}
+.secuImageCon{
+  position: relative;
+  width: 60px;
+  background-color:#b69165 ;
+  border-radius: 100%;
+  padding: 30px;
+  top: -90px;
+}
+.textCardAbout{
+  position: relative;
+  top: -75px;
+}
+.h3About{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  font-size: 19px;
+}
+.h2About{
+  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font-size: 30px;
+  margin-bottom: 10px;
+}

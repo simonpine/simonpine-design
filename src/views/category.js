@@ -16,7 +16,7 @@ function Category (){
     else if(params.category == 'Dining'){o = 5}
     else if(params.category == 'Kids'){o = 6}
     return (
-        <Layout a={'3'} b={cartItems.length}>
+        <Layout a={'3'}>
             <Actualname>
             <ActualmaxPrice>
             <Actualcompany>

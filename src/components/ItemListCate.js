@@ -29,6 +29,7 @@ function ItemListCate(){
                     {({ name }) => {
                         return(
                             <section className="productContainer">
+                            {loading && <div></div>}
                             {products.map((product) => {
                                 const title = product.title.toLowerCase()
                                 const nameLow = name.toLowerCase()

@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsTest } from '../mocks/item.mock'
-import { cartItems } from "../mocks/cart.mock";
 import Layout from "../components/layout";
-import CategoryFilter from "../components/categoryFilter";
 import {Link} from 'react-router-dom'
 function ItemDetail(){
     const [actualCart, setActualCart] = useState(0)
@@ -34,7 +32,7 @@ function ItemDetail(){
         }).then((data)  => setLoading(!!data))
     }, [])
     return(
-    <Layout a={'3'} b={cartItems.length}> 
+    <Layout a={'3'}> 
         <section className="itemDatail">
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
             <h1>{product.title}</h1>
