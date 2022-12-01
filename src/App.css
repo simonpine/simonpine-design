@@ -141,7 +141,8 @@ ul {
   position: fixed;
   width: 90vw;
   height: 100vh;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(5px);
+  z-index: 100;
 }
 .imgCard{
   position: relative;
@@ -324,33 +325,6 @@ h1{
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.mainButton{
-  width: 170px;
-}
-.buttonHover{
-  margin-top: 20px;
-  font: normal 16px/30px "Alegreya Sans",sans-serif;
-  font-size: 13px;
-  word-spacing: 5px;
-  text-align: left;
-  font-weight: 900;
-  background: none;
-  border: #fff 1px solid;
-  border-radius: 10px 0px 0px 10px;
-  padding: 7px 14px 7px 14px;
-  cursor: pointer;
-  letter-spacing: 2px;
-}
-.buttonHover:hover{
-  opacity: 0.8;
-  background-color: #BF9B6F;
-}
-.secondButton{
-  border-radius: 0px;
-}
-.buttonOne{
-  border-radius: 0px 10px 10px 0px;
-}
 .categoryFilter{
   height: 100px;
   width: 100vh;
@@ -392,16 +366,6 @@ background-size: 50% 2px;
 }
 .b2{
   font-size: 15px;
-}
-.itemDatail{
-  position:absolute;
-  right: 10vw;
-  width: 80vw; 
-  top: 30px;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 .more{
   padding: 60px 10px 60px 10px;
@@ -583,4 +547,121 @@ background-size: 100% 1px;
   font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
   font-size: 30px;
   margin-bottom: 10px;
+}
+.itemDatail{
+  position:absolute;
+  right: 5vw;
+  width: 85vw; 
+  top: 5vh;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
+}
+.details{
+  width: 50%;
+}
+.btnImg{
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+  margin: 4px;
+}
+.btnImg:hover{
+  border: #b69165 1px solid;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: rgb(95 79 57) 0px 8px 24px;
+}
+.innerBtn{
+  width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+.img{
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  height: 100%;
+  
+}
+.mainImg{ 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.minImgCon{
+  overflow: hidden;
+  height: 450px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(105, 105, 105, 0.644) 0px 8px 24px;
+}
+.miniImg{
+  left: -1%;
+  position: relative;
+  height: 80px;
+  margin-top: 20px;
+  display: flex;
+  width: 102%;
+  justify-content: space-between;
+  align-items: center;
+}
+.pDetail{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: left;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  letter-spacing: 5px;
+  font-size: 15px;
+  line-height: 30px;
+}
+.h1{
+  margin-top: 30px;
+  width: 100%;
+}
+.btnBack{
+  text-decoration: none;
+  color: #b69165;
+  font-size: 20px;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  color: #BF9B6F;
+  transition: 1s ease;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.btnBack:hover{
+  background-position: 0% 100%;
+  background-size: 100% 1px;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+.aditionalInfo{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  letter-spacing: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+.priceInfo{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #BF9B6F;
+  padding-bottom: 25px;
 }
