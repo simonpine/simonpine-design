@@ -17,7 +17,7 @@ export const CustomProvider = ( { children } ) => {
         console.log(cart)
     }}
     const clear = () => {
-        setCart([])
+        cart = []
         setQty(0)
         setTotal(0)
     }
