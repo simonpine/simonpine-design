@@ -165,7 +165,7 @@ export const ProductsTest =  [{
     price: "1099.99",
     pictureUrl: "/img/17.jpeg",
     stock: 22,
-    category:'individual',
+    category:'Dining',
     company:'liddy',
 },
 {

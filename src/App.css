@@ -665,3 +665,42 @@ background-size: 100% 1px;
   color: #BF9B6F;
   padding-bottom: 25px;
 }
+.allButtons{
+  display: flex;
+  margin-top: 20px;
+}
+.moreLessBut{
+  display: flex;
+}
+.secuButt{
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: #b69165 1px solid;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 100;
+}
+.secuButt:hover{
+  cursor: pointer;
+  background-color: #b6926591;
+}
+.actualCart{
+  margin: 0px 10px 0 10px;
+  font-weight: 100;
+  width: 20px;
+}
+.addCart{
+  letter-spacing: 5px;
+  padding: 0 10px;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  margin-left: 10px;
+  background: none;
+  border: #b69165 1px solid;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.addCart:hover{
+  cursor: pointer;
+  background-color: #b6926591;
+}

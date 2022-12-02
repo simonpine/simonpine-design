@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { Actualcompany } from '../context/companyContext'
 import { ActualmaxPrice } from '../context/priceContext'
 import { Actualname } from '../context/nameContext'
+import { CustomProvider } from '../context/cartContext'
 function Category (){
     const params = useParams()
     let o;
@@ -17,6 +18,7 @@ function Category (){
     else if(params.category == 'Kids'){o = 6}
     return (
         <Layout a={'3'}>
+            <CustomProvider>
             <Actualname>
             <ActualmaxPrice>
             <Actualcompany>
@@ -25,6 +27,7 @@ function Category (){
             </Actualcompany>
             </ActualmaxPrice>
             </Actualname>
+            </CustomProvider>
         </Layout>
     )
 }

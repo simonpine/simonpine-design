@@ -2,23 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsTest } from '../mocks/item.mock'
 import Layout from "../components/layout";
+import { CustomProvider } from "../context/cartContext";
 import {Link} from 'react-router-dom'
 import one from '../img/complemen/1.jpeg'
 import two from '../img/complemen/2.jpeg'
 import tree from '../img/complemen/3.jpeg'
 import four from '../img/complemen/4.jpeg'
+import Buttons from "../components/buttonsDetail";
 function ItemDetail(){
-    const [actualCart, setActualCart] = useState(0)
-    function lessStock(){
-        if(actualCart != 0){
-            setActualCart(actualCart - 1)
-        }
-    }
-    function moreStock(){
-        if(actualCart < product.stock){
-            setActualCart(actualCart + 1)
-        }
-    }
     const params = useParams()
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
@@ -35,6 +26,7 @@ function ItemDetail(){
         }).then((data)  => setLoading(!!data))
     }, [])
     return(
+    <CustomProvider>
     <Layout a={'3'}> 
         <section className="itemDatail">
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
@@ -65,17 +57,11 @@ function ItemDetail(){
                 <h2 className="priceInfo">Price: ${product.price}</h2>
                 <h2 className="aditionalInfo">Stock: {product.stock}</h2>
                 <h2 className="aditionalInfo">In cart: {'0'}</h2>
-                <div>
-                    <button className="">Add to the cart</button>
-                <div>
-                        <button className="" onClick={lessStock} >-</button>
-                        <h3> {actualCart}</h3>
-                        <button className="" onClick={moreStock} >+</button>
-                </div>
-                </div>
+                <Buttons props={product}/>
             </div>
         </section>
     </Layout>
+    </CustomProvider>
     )
 }
 export default ItemDetail;
