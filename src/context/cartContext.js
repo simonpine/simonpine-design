@@ -56,9 +56,9 @@ export const CustomProvider = ( { children } ) => {
         a.map((itemSe) => {
             if(itemSe.id == idSearch){
                 num = itemSe.number
-                return num
             }
         })
+        return num
     }
     return(
         <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart }}>
