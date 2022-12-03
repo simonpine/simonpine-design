@@ -26,7 +26,6 @@ function ItemDetail(){
         }).then((data)  => setLoading(!!data))
     }, [])
     return(
-    <CustomProvider>
     <Layout a={'3'}> 
         <section className="itemDatail">
             {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
@@ -61,7 +60,6 @@ function ItemDetail(){
             </div>
         </section>
     </Layout>
-    </CustomProvider>
     )
 }
 export default ItemDetail;

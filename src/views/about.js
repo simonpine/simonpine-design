@@ -1,5 +1,4 @@
 import Layout from "../components/layout";
-import { cartItems } from "../mocks/cart.mock";
 import fir from '../img/1.png'
 import sec from '../img/2.png'
 import ter from '../img/3.png'
