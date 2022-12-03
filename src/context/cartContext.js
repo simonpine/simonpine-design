@@ -52,13 +52,13 @@ export const CustomProvider = ( { children } ) => {
             const itemNew = JSON.parse(newItemJason2)
             a.push(itemNew)
         }
-        let num = 0
+        let num
         a.map((itemSe) => {
             if(itemSe.id == idSearch){
-                h = itemSe.number
+                num = itemSe.number
+                return num
             }
         })
-        return num
     }
     return(
         <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart }}>
