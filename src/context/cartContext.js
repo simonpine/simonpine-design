@@ -52,7 +52,7 @@ export const CustomProvider = ( { children } ) => {
             const itemNew = JSON.parse(newItemJason2)
             a.push(itemNew)
         }
-        let h
+        let h = 0
         a.map((it) => {
             if(it.id == idSearch){
                 h = it.number

@@ -21,7 +21,7 @@ function Buttons( { props } ) {
                         }
                     }
                 function change(){
-                    if(numberInCart(props.id) != undefined){
+                    if((numberInCart(props.id) != undefined) || (numberInCart(props.id) != null) ){
                         setIncart(numberInCart(props.id))
                     }
                     else{
