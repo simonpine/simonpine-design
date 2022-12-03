@@ -80,21 +80,33 @@ ul {
   list-style: none;
 }
 .cart{
+  height: 30px;
   padding-left: 10px;
   border: none;
   background: none;
   border-left: 1px solid #ffff;
+  text-decoration: none;
 }
 .red{
-  font-size: 15px;
-  font: normal "Alegreya Sans",sans-serif;
-  color: black;
+  right: -10px;
+  top: -5px;
   border-radius: 20px;
   height: 20px;
   width: 20px;
-  background-color: #BF9B6F;
+  background-color: #bf9b6f;
   transform: rotate(90deg);
-  position: absolute;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center
+}
+h5{
+  transform: translate(0, -2px);
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  color: #0c0c0c;
+  font-size: 15px;
+  font-weight: 700;
 }
 .productContainer{
   position:absolute;
@@ -656,6 +668,7 @@ background-size: 100% 1px;
   font-size: 15px;
   margin-bottom: 10px;
   opacity: 0.7;
+  text-align: left;
 }
 .priceInfo{
   font: normal 14px/17px "Alegreya Sans",sans-serif;

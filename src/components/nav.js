@@ -8,6 +8,7 @@ function Nav({ ite, main }) {
     const one = {}
     const two = {}
     const tree = {}
+    const four = {}
     if(main == 1){
         one.opacity = "1"
         one.backgroundSize = "50% 2px"
@@ -15,6 +16,9 @@ function Nav({ ite, main }) {
     else if (main == 2){
         two.opacity = "1"
         two.backgroundSize = "50% 2px"
+    }
+    else if (main == 4){
+        four.opacity = "1"
     }
     else{
         tree.opacity = "1"
@@ -61,7 +65,7 @@ function Nav({ ite, main }) {
                         }}  style={tree} >Store</Link>
                     </li>
                 </ul>
-                <Cart numItem={ite} />
+                <Cart numItem={ite} main={four}/>
         </nav>
     );
 }

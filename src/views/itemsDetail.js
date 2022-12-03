@@ -55,7 +55,6 @@ function ItemDetail(){
                 <p className="pDetail">{product.description}</p>
                 <h2 className="priceInfo">Price: ${product.price}</h2>
                 <h2 className="aditionalInfo">Stock: {product.stock}</h2>
-                <h2 className="aditionalInfo">In cart: {'0'}</h2>
                 <Buttons props={product}/>
             </div>
         </section>

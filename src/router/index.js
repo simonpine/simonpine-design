@@ -3,6 +3,7 @@ import App from '../App.js'
 import Category from '../views/category.js'
 import About from "../views/about.js";
 import ItemDetail from "../views/itemsDetail.js";
+import Cart from "../views/cart.js";
 
 export const router = createBrowserRouter([
     {
@@ -20,5 +21,9 @@ export const router = createBrowserRouter([
     {
         path: '/About',
         element: <About/>,
+    },
+    {
+        path: '/cart',
+        element: <Cart/>,
     }
 ])

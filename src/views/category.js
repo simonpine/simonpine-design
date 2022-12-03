@@ -1,5 +1,4 @@
 import Layout from "../components/layout";
-import { cartItems } from "../mocks/cart.mock";
 import ItemListCate from "../components/ItemListCate";
 import CategoryFilter from "../components/categoryFilter";
 import { useParams } from "react-router-dom";

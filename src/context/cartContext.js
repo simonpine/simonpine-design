@@ -12,7 +12,6 @@ export const CustomProvider = ( { children } ) => {
             const newItemJason = localStorage.getItem(`item${i}`)
             const itemNew = JSON.parse(newItemJason)
             cart.push(itemNew)
-            setTotal(total + (itemNew.price * itemNew.qty))
         }
         console.log(cart)
     }}
@@ -22,25 +21,47 @@ export const CustomProvider = ( { children } ) => {
         setTotal(0)
     }
     const addItem = ( itemProps, numNew ) => {
-        // let yes = true
-        // cart.map((cartItem) =>{
-        //     if(cartItem.id == itemProps.id){
-        //         cartItem.number = cartItem.number + numNew
-        //         yes = false
-        //         console.log('yeah')
-        //     }
-        // })
-        if(true){
-            const newItem = itemProps
-            newItem.number = numNew
-            const itemJSON = JSON.stringify(newItem);
-            localStorage.setItem(`item${localStorage.length}`, itemJSON)
-            localSto()
-            setQty(localStorage.length)
+        if(numNew != 0){
+            let dontExist = true
+            for(let i = 0; i < (localStorage.length); i++){
+                const newItemJason = localStorage.getItem(`item${i}`)
+                const cartItem = JSON.parse(newItemJason)
+                if(cartItem.id == itemProps.id){
+                    cartItem.number = cartItem.number + numNew
+                    const itemJSON = JSON.stringify(cartItem);
+                    localStorage.setItem(`item${i}`, itemJSON)
+                    console.log('yeah')
+                    dontExist = false
+                    localSto()
+                }
+            }
+            if(dontExist){        
+                const newItem = itemProps
+                newItem.number = numNew
+                const itemJSON = JSON.stringify(newItem);
+                localStorage.setItem(`item${localStorage.length}`, itemJSON)
+                localSto()
+                setQty(localStorage.length)
+            }
         }
     }
+    const numberInCart = ( idSearch ) => {
+        const a = []
+        for(let i = 0; i < (localStorage.length); i++){
+            const newItemJason2 = localStorage.getItem(`item${i}`)
+            const itemNew = JSON.parse(newItemJason2)
+            a.push(itemNew)
+        }
+        let h
+        a.map((it) => {
+            if(it.id == idSearch){
+                h = it.number
+            }
+        })
+        return h
+    }
     return(
-        <ContextCart.Provider value={{ cart, qty, total, addItem }}>
+        <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart }}>
             {children}
         </ContextCart.Provider>
     )
