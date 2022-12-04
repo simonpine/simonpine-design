@@ -4,7 +4,7 @@ import insta from '../img/insta.png';
 import twi from '../img/twitter.png';
 import git from '../img/facebook.png';
 import {Link} from 'react-router-dom'
-function Nav({ ite, main }) {
+function Nav({ main }) {
     const one = {}
     const two = {}
     const tree = {}
@@ -65,7 +65,7 @@ function Nav({ ite, main }) {
                         }}  style={tree} >Store</Link>
                     </li>
                 </ul>
-                <Cart numItem={ite} main={four}/>
+                <Cart main={four}/>
         </nav>
     );
 }

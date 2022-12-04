@@ -1,11 +1,28 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const ContextCart = createContext()
 export const CustomProvider = ( { children } ) => {
     const cart = []
-    const [qty, setQty] = useState(localStorage.length)
+    const [qty, setQty] = useState(0)
     const [total, setTotal] = useState(0)
-    
+    const [reEfect, setReEfect] = useState(0)
+    useEffect(()=>{
+        const a = []
+        for(let i = 0; i < (localStorage.length); i++){
+            const newItemJason2 = localStorage.getItem(`item${i}`)
+            const itemNew = JSON.parse(newItemJason2)
+            if(itemNew.id){
+                a.push(itemNew)
+            }
+        }
+        let g = 0
+        a.forEach((q) => {
+            g = Math.round((((+q.price) * (+q.number)) + (+g)))
+
+        })
+        setTotal(g)
+        setQty(a.length)
+    }, [reEfect])
     function localSto(){
         if(localStorage.length != 0){
         for(let i = 0; i < (localStorage.length); i++){
@@ -41,18 +58,18 @@ export const CustomProvider = ( { children } ) => {
                 const itemJSON = JSON.stringify(newItem);
                 localStorage.setItem(`item${localStorage.length}`, itemJSON)
                 localSto()
-                setQty(localStorage.length)
+                setReEfect(Math.random())
             }
         }
     }
     const numberInCart = ( idSearch ) => {
         const a = []
+        let num
         for(let i = 0; i < (localStorage.length); i++){
             const newItemJason2 = localStorage.getItem(`item${i}`)
             const itemNew = JSON.parse(newItemJason2)
             a.push(itemNew)
         }
-        let num
         a.map((itemSe) => {
             if(itemSe.id == idSearch){
                 num = itemSe.number
