@@ -30,12 +30,10 @@ export const CustomProvider = ( { children } ) => {
             const itemNew = JSON.parse(newItemJason)
             cart.push(itemNew)
         }
-        console.log(cart)
     }}
     const clear = () => {
-        cart = []
-        setQty(0)
-        setTotal(0)
+        localStorage.clear()
+        setReEfect(Math.random())
     }
     const addItem = ( itemProps, numNew ) => {
         if(numNew != 0){
@@ -62,6 +60,47 @@ export const CustomProvider = ( { children } ) => {
             }
         }
     }
+    const deleteItemAllS = ( itemId ) => {
+            for(let i = 0; i < (localStorage.length); i++){
+                const newItemJason = localStorage.getItem(`item${i}`)
+                const cartItem = JSON.parse(newItemJason)
+                if(cartItem.id == itemId){
+                    const itemJSON = JSON.stringify({ empty: 'deletedItem', });
+                    localStorage.setItem(`item${i}`, itemJSON)
+                    localSto()
+                    setReEfect(Math.random())
+                }
+            }
+    }
+    const plus = ( itemProps, actual ) => {
+        for(let i = 0; i < (localStorage.length); i++){
+            const newItemJason = localStorage.getItem(`item${i}`)
+            const cartItem = JSON.parse(newItemJason)
+            if(cartItem.id == itemProps.id){
+                if(actual < cartItem.stock){
+
+                    cartItem.number = cartItem.number + 1
+                    const itemJSON = JSON.stringify(cartItem);
+                    localStorage.setItem(`item${i}`, itemJSON)
+                    localSto()
+                }
+            }
+        }
+    }
+    const less = ( itemProps, actual ) => {
+        for(let i = 0; i < (localStorage.length); i++){
+            const newItemJason = localStorage.getItem(`item${i}`)
+            const cartItem = JSON.parse(newItemJason)
+            if(cartItem.id == itemProps.id){
+                if(actual > 1){
+                    cartItem.number = cartItem.number - 1
+                    const itemJSON = JSON.stringify(cartItem);
+                    localStorage.setItem(`item${i}`, itemJSON)
+                    localSto()
+                }
+            }
+        }
+    }
     const numberInCart = ( idSearch ) => {
         const a = []
         let num
@@ -78,7 +117,7 @@ export const CustomProvider = ( { children } ) => {
         return num
     }
     return(
-        <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart }}>
+        <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart, clear, deleteItemAllS, plus, less }}>
             {children}
         </ContextCart.Provider>
     )

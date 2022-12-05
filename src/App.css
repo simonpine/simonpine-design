@@ -730,16 +730,21 @@ background-size: 100% 1px;
 .ItemCartDetail{
   margin: 20px;
   max-width: 100%;
-  min-height: 90px;
+  min-height: 80px;
   background-color: #0c0c0c;
   border-radius: 20px;
-  box-shadow: rgba(255, 255, 255, 0.096) 0px 8px 24px; 
+  box-shadow: rgba(255, 255, 255, 0.26) 0px 8px 24px; 
   display: flex;
   justify-content: space-between;
   transition: 0.5s;
   padding: 10px;
+  align-items: center;
+  opacity: 0.5;
+  text-decoration: none;
+  flex-wrap: wrap;
 }
 .ItemCartDetail:hover{
+  opacity: 1;
   box-shadow: rgb(95 79 57) 0px 8px 24px;
 }
 .imgCartItem{
@@ -750,12 +755,90 @@ background-size: 100% 1px;
 .imgCartItemCon{
   position: relative;
   overflow:hidden;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 15px;
 
 }
 .titleCartItem{
   width: 100px;
   text-align: left;
+}
+.allButtonsCart{
+  margin-right: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+.butCart{
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: #b69165 solid 1px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.butCart:hover{
+  background-color: #b692657a;
+  cursor: pointer;
+}
+.titleCartItem{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 19px;
+  letter-spacing: 5px;
+}
+.h{
+  font-size: 19px;
+}
+.title1{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.center{
+  height: 90vh;
+  display: flex;
+}
+.total{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+
+  display: flex;
+}
+.confirmation{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.k{
+  display: flex;
+  width: fit-content;
+  margin-bottom: 15px;
+  align-items: center
+}
+.total div{
+  margin-left: 10px;
+  font-weight: 600;
+}
+.clear{
+  background: none;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  padding: 5px 15px 5px 15px;
+  border: #b69165 solid 1px;
+  border-radius: 5px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.clear:hover{
+  cursor: pointer;
+  background-color: #b692657a;
+}
+.l{
+  margin-right: 20px;
 }
