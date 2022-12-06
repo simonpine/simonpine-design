@@ -1,19 +1,31 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Items from './items.js';
-import { ProductsTest } from '../mocks/item.mock'
 import { Context } from '../context/companyContext'
 import { Context2 } from '../context/priceContext'
 import { Context3 } from '../context/nameContext'
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 function ItemListCate(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    const productsFromApi = new Promise((resolve) => {  setTimeout(()=>{resolve(ProductsTest)}, 2000)})
     useEffect(()=>{
-        productsFromApi.then((data) => {
-            setProducts(data)
-        }).then((data)  => setLoading(!!data))
+        const db = getFirestore()
+        const itemsColection = collection(db, 'items')
+        getDocs(itemsColection).then((snap) => {
+            const prov = []
+            const pro = snap.docs.map((c) => {
+                let a = {...c.data()}
+                prov.push(a)
+            })
+            setProducts(prov)
+            }).then((data)  => setLoading(!!data))
+        // const itemRef = doc(db, 'items', '2c1zCv69zcFfXwAnpXw8')
+
+        // getDoc(itemRef).then((snap) => {
+        //     if(snap.exists()){
+        //         setProducts([snap.data()])
+        //     }
     }, [Items])
     const params = useParams()
     return(
@@ -31,7 +43,7 @@ function ItemListCate(){
                             <section className="productContainer">
                             {loading && <div></div>}
                             {products.map((product) => {
-                                const title = product.title.toLowerCase()
+                                const title = product.title
                                 const nameLow = name.toLowerCase()
                                 if(nameLow == ''){
                                     if(!(+product.price > maxprice)){ 

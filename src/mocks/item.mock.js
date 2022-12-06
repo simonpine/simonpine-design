@@ -110,7 +110,7 @@ export const ProductsTest =  [{
 },
 {
     id: "12",
-    title: "Dining Table ",
+    title: "Dining Table",
     description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     price: "429.99",
     pictureUrl: "/img/12.jpeg",
@@ -214,7 +214,7 @@ export const ProductsTest =  [{
     description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     price: "2500.99",
     pictureUrl: "/img/22.jpeg",
-    stock: 2,
+    stock: 92,
     category:'Bedroom',
     company:'ikea',
 },

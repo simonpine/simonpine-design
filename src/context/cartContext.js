@@ -18,7 +18,6 @@ export const CustomProvider = ( { children } ) => {
         let g = 0
         a.forEach((q) => {
             g = Math.round((((+q.price) * (+q.number)) + (+g)))
-
         })
         setTotal(g)
         setQty(a.length)
@@ -83,6 +82,7 @@ export const CustomProvider = ( { children } ) => {
                     const itemJSON = JSON.stringify(cartItem);
                     localStorage.setItem(`item${i}`, itemJSON)
                     localSto()
+                    setReEfect(Math.random())
                 }
             }
         }
@@ -97,6 +97,7 @@ export const CustomProvider = ( { children } ) => {
                     const itemJSON = JSON.stringify(cartItem);
                     localStorage.setItem(`item${i}`, itemJSON)
                     localSto()
+                    setReEfect(Math.random())
                 }
             }
         }

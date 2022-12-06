@@ -5,16 +5,22 @@ import logo from './img/logo1.svg'
 import {Link} from 'react-router-dom'
 import React from 'react';
 import Items from './components/items';
-import { ProductsTest } from './mocks/item.mock'
 import { CustomProvider } from './context/cartContext'
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 function App() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const productsFromApi = new Promise((resolve) => {  setTimeout(()=>{resolve(ProductsTest)}, 2000)})
   useEffect(()=>{
-      productsFromApi.then((data) => {
-          setProducts(data)
-      }).then((data)  => setLoading(!!data))
+    const db = getFirestore()
+    const itemsColection = collection(db, 'items')
+    getDocs(itemsColection).then((snap) => {
+        const prov = []
+        const pro = snap.docs.map((c) => {
+            let a = {...c.data()}
+            prov.push(a)
+        })
+        setProducts(prov)
+        }).then((data)  => setLoading(!!data))
   }, [])
   const a = (Math.ceil(Math.random()*23))
   const b = (Math.ceil(Math.random()*23))

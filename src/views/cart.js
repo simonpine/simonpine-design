@@ -17,6 +17,9 @@ function CartView (){
             }
         }
     }
+    function restart(){
+        setr(Math.random())
+    }
     useEffect(()=>{
         showCart()
     }, [r])
@@ -26,9 +29,6 @@ function CartView (){
             <section className='cartSpace'>
                 <div className='productsInCartContainer'>
                     {showItems.map((item) => {
-                        function restart(){
-                            setr(Math.random())
-                        }
                             return(
                                 <ItemCartDetail porps={item} restart={restart}/>
                             )
