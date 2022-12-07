@@ -842,3 +842,196 @@ background-size: 100% 1px;
 .l{
   margin-right: 20px;
 }
+.checkpout{
+  position: absolute;
+  left: 10vw;
+  width: 80vw;
+  min-height: 75vh;
+  top: 10vh;
+}
+.confirmationChek{
+  display: grid;
+  width: 100%;
+  min-height: 75vh;
+  grid-template-rows: repeat(2, 45%);
+  grid-template-columns: 47% 47%;
+  align-content: space-between;
+  justify-content: space-evenly;
+  grid-template-areas: 
+  "Delivery PaymentMethod"
+  "Purchase PaymentMethod";
+}
+
+.Purchase{
+  grid-area: Purchase;
+}
+.Delivery{
+  grid-area: Delivery;
+}
+.reUseP{
+  height: 90%;
+  width: 90%;
+  background-color: #0c0c0c;
+  box-shadow: rgba(255, 255, 255, 0.13) 0px 8px 24px; 
+  /* border: #b69165 1px solid; */
+  border-radius: 25px;
+  border: #b69165;
+  transition: 0.3s;
+  padding: 5%;
+}
+.reUseP:hover{
+  box-shadow: rgba(119, 99, 70, 0.678) 0px 8px 24px;
+}
+.titlePa{
+  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #b69165;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 7px;
+  background-size: 30% 10px;
+  width: fit-content;
+}
+.PaymentMethod{
+  grid-area: PaymentMethod;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-items: flex-end
+}
+.toTal{
+  padding-top: 30px;
+  border-top:1px rgba(255, 255, 255, 0.452) solid ;
+  width: 100%;
+}
+.ko{
+  margin-top: 5%;
+  width: 100%;
+  justify-content: space-between;
+}
+.ko div{
+  font-weight: 100;
+}
+.Deli{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin-left: 20px;
+}
+.deliCOn{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+.deliCOn div{
+  margin-top: 30px;
+}
+.search2{
+  margin-top: 30px;
+  width: 90%;
+  padding: 2% 5% 2% 5%;
+}
+.search2:disabled{
+  opacity: 0.5;
+}
+.finish{
+  background: none;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  padding: 10px 25px 10px 25px;
+  border: #b69165 solid 1px;
+  border-radius: 5px;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: 20px;
+}
+.finish:hover{
+  cursor: pointer;
+  background-color: #b692657a;
+}
+.finish:disabled{
+  opacity: 0.5;
+}
+.finish:disabled:hover{
+  cursor:auto;
+  background:none;
+}
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #0c0c0c;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0.5px solid #b69165;
+}
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #b69165;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0.5px solid #b69165;
+}
+.endCard{
+  top: -2%;
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  background-color: #0c0c0cdc;
+  border-radius: 40px;
+  border: #b69165 1px solid;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: 1s ease;
+}
+.payM{
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template-rows:repeat(5, 15%);
+  grid-template-columns:  repeat(2, 45%);
+  align-content: space-between;
+  justify-content: space-between;
+  grid-template-areas: 
+  "f f"
+  "g g"
+  "j j"
+  "e e"
+  "ex x";
+}
+#ex{
+  grid-area: ex;
+}
+.f{
+  grid-area: f;
+}
+.g{
+  grid-area: g;
+}
+.j{
+  grid-area: j;
+}
+.e{
+  grid-area: e;
+}
+.x{
+  grid-area: x;
+}
+.conpayme{
+  width: 100%;
+}
