@@ -10,16 +10,21 @@ function Checkout (){
     const [toTal, setToTal] = useState(0)
     const [disa, setDisa] = useState(true)
     const [disa2, setDisa2] = useState(true)
-    const [end, setEnd] = useState({  top: '-160vh', })
+
+    const [delivery, setdelivery] = useState({})
+    const [orderCode, setOrderCode] = useState(true)
+
+    const [end, setEnd] = useState({  top: '-200vh', })
     return(
         <Layout a={'4'}>
             <section className='checkpout'>
                     <ContextCart.Consumer>
                         {( { total, clear, qty } ) =>{
                             function clearAll( evt ){
+                                console.log(evt.target)
                                 evt.preventDefault();
-                                clear()
                                 setEnd({  top: '-2%', })
+                                setTimeout(clear(), 1000)
                             }
                             const initial = ( s ) => {
                                 let k = 0
@@ -60,15 +65,15 @@ function Checkout (){
                             }
                             return(
                                 <form onSubmit={clearAll}  className='confirmationChek'>
-                                    {<ShoppingEndCard see={end}></ShoppingEndCard>}
-                                    <div className='Purchase reUseP'>
+                                    {<ShoppingEndCard total={toTal} see={end}></ShoppingEndCard>}
+                                    <div className='Purchase reUseP reUsev'>
                                         <h2 className='titlePa'>Purchase Summary</h2>
                                         <h4 className='total ko'>Subtotal: <div>${subTotal}</div></h4>
                                         <h4 className='total ko'>IVA: <div>${iva}</div></h4>
                                         <h4 className='total ko'>Shipping: <div>${shipping}</div></h4>
                                         <h4 className='total toTal ko'>Total: <div>${toTal}</div></h4>
                                     </div>
-                                    <div className='Delivery reUseP'>
+                                    <div className='Delivery reUseP reUsev'>
                                         <h2 className='titlePa'>Delivery service</h2>
                                         <div className='deliCOn'>
                                             <div>
