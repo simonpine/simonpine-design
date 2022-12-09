@@ -11,20 +11,20 @@ function App() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(()=>{
-    const db = getFirestore()
-    const itemsColection = collection(db, 'items')
-    getDocs(itemsColection).then((snap) => {
-        const prov = []
-        const pro = snap.docs.map((c) => {
-            let a = {...c.data()}
-            prov.push(a)
-        })
-        setProducts(prov)
-        }).then((data)  => setLoading(!!data))
+      const db = getFirestore()
+      const itemsColection = collection(db, 'items')
+      getDocs(itemsColection).then((snap) => {
+          const prov = []
+          const pro = snap.docs.map((c) => {
+              let a = {...c.data(), id: c.id,}
+              prov.push(a)
+          })
+          setProducts(prov)
+          }).then((data)  => setLoading(!!data))
   }, [])
-  const a = (Math.ceil(Math.random()*23))
-  const b = (Math.ceil(Math.random()*23))
-  const c = (Math.ceil(Math.random()*23))
+  const a = products[(Math.ceil(Math.random()*23))]
+  const b = products[(Math.ceil(Math.random()*23))]
+  const c = products[(Math.ceil(Math.random()*23))]
   return (
     <CustomProvider>
       <Layout a={'1'}>
@@ -46,7 +46,7 @@ function App() {
               <div className='exampleCards'>
               {loading && <div className="loading2"><div className="lds-dual-ring"></div></div>}
                 {products.map((product) => {
-                  if ((product.id == a || product.id == b ) || (product.id == c)){
+                  if((product.title == a.title || product.title == b.title) || product.title == c.title){
                     return(
                       <Items props={product}/>
                     )

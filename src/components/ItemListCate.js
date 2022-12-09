@@ -43,9 +43,9 @@ function ItemListCate(){
                             <section className="productContainer">
                             {loading && <div></div>}
                             {products.map((product) => {
-                                const title = product.title
+                                const title2 = product.title.toLowerCase()
                                 const nameLow = name.toLowerCase()
-                                if(nameLow == ''){
+                                if(name == ''){
                                     if(!(+product.price > maxprice)){ 
                                         if(theCompany == 'all'){
                                             if (params.category == 'All'){return <Items props={product}/>}
@@ -57,7 +57,7 @@ function ItemListCate(){
                                         }
                                     }
                                 }
-                                else if(title.includes(nameLow)){
+                                else if(title2.includes(nameLow)){
                                     if(!(+product.price > maxprice)){ 
                                         if(theCompany == 'all'){
                                             if (params.category == 'All'){return <Items props={product}/>}
