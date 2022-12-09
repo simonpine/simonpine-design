@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import {ContextCart} from '../context/cartContext'
 import Layout from '../components/layout';
-import {Link} from 'react-router-dom'
-import ShoppingEndCard from '../components/shopingEndCard';
+import {Link, useNavigate} from 'react-router-dom'
+import { clear } from '@testing-library/user-event/dist/clear';
 function Checkout (){
     const [subTotal, setSubTotal] = useState(0)
     const [iva, setIva] = useState(0)
@@ -10,36 +10,20 @@ function Checkout (){
     const [toTal, setToTal] = useState(0)
     const [disa, setDisa] = useState(true)
     const [disa2, setDisa2] = useState(true)
-
-    const [delivery, setdelivery] = useState({})
-    const [orderCode, setOrderCode] = useState(true)
-
-    const [end, setEnd] = useState({  top: '-200vh', })
+    const navigate = useNavigate();
+    const [delivery, setDelivery] = useState('')
+    const [name, setName] = useState('')
+    const [mail, setMail] = useState('')
     return(
         <Layout a={'4'}>
             <section className='checkpout'>
                     <ContextCart.Consumer>
-                        {( { total, clear, qty } ) =>{
-                            function clearAll( evt ){
-                                console.log(evt.target)
+                        {( { total, qty, setOrder } ) =>{
+                            function setOrdeAction( evt ){
                                 evt.preventDefault();
-                                setEnd({  top: '-2%', })
-                                setTimeout(clear(), 1000)
+                                return Promise.resolve(setOrder(subTotal, iva, disa2, delivery, toTal, name, mail, shipping )).then((a) => navigate(`/orders/${a}`)).then(() => {localStorage.clear()})
                             }
                             const initial = ( s ) => {
-                                let k = 0
-                                setShipping(0)
-                                setIva(total * 0.15)
-                                setSubTotal(total - (total * 0.15))
-                                if( s ){
-                                    if(total < 2000){
-                                        setShipping(400)
-                                        k = 400
-                                    }
-                                }
-                                setToTal((total * 0.15) + (total - (total * 0.15)) + k)
-                            }
-                            const initial2 = ( s ) => {
                                 let k = 0
                                 setShipping(0)
                                 setIva(total * 0.15)
@@ -55,7 +39,7 @@ function Checkout (){
                             function m(evt){
                                 setDisa(false)
                                 if(evt.target.value == 2){
-                                    initial2( true )
+                                    initial( true )
                                     setDisa2(false)
                                 }
                                 else{
@@ -64,8 +48,7 @@ function Checkout (){
                                 }
                             }
                             return(
-                                <form onSubmit={clearAll}  className='confirmationChek'>
-                                    {<ShoppingEndCard total={toTal} see={end}></ShoppingEndCard>}
+                                <form onSubmit={setOrdeAction}  className='confirmationChek'>
                                     <div className='Purchase reUseP reUsev'>
                                         <h2 className='titlePa'>Purchase Summary</h2>
                                         <h4 className='total ko'>Subtotal: <div>${subTotal}</div></h4>
@@ -85,21 +68,24 @@ function Checkout (){
                                                 <label className='Deli' for='2'>Send home</label>
                                             </div>
                                         </div>
-                                        <input disabled={disa2} type='text' className='search search2' placeholder='Delivery address' required></input>
+                                        <input disabled={disa2} type='text' onChange={(evt) => { setDelivery(evt.target.value) }} className='search search2' placeholder='Delivery address' required></input>
                                     </div>
                                     <div className='PaymentMethod reUseP'>
                                         <div className='conpayme'>
                                             <h2 className='titlePa'>Payment method</h2>
                                             <div className='payM'>
-                                                <input disabled={disa} type='text' className='f search search2' placeholder='Name' required></input>
-                                                <input disabled={disa} type='text' className='g search search2' placeholder='Email' required></input>
+                                                <input disabled={disa} type='text' onChange={(evt) => { setName(evt.target.value) }}  className='f search search2' placeholder='Name' required></input>
+                                                <input disabled={disa} type='text' onChange={(evt) => { setMail(evt.target.value) }} className='g search search2' placeholder='Email' required></input>
                                                 <input disabled={disa} type='phone' className='j search search2' placeholder='Phone' required></input>
                                                 <input disabled={disa} type='text' className='e search search2' placeholder='Card number' required></input>
                                                 <input disabled={disa} type='date' id='ex' className='y search search2' placeholder='expiration date' required></input>
                                                 <input disabled={disa} type='text' className='x search search2 ' placeholder='CVV' required></input>
                                             </div>
                                         </div>
-                                        <button disabled={disa} type='submit' className='finish'>finish order</button>
+                                        <div className='lastButtonsCont'>
+                                            <Link className='finish' type='submit' to={{pathname:"/cart"}}>Back to cart</Link>
+                                            <button disabled={disa} type='submit' className='finish'>finish order</button>
+                                        </div>
                                     </div>
                                 </form>
                             )

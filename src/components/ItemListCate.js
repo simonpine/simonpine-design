@@ -15,7 +15,7 @@ function ItemListCate(){
         getDocs(itemsColection).then((snap) => {
             const prov = []
             const pro = snap.docs.map((c) => {
-                let a = {...c.data()}
+                let a = {...c.data(), id: c.id,}
                 prov.push(a)
             })
             setProducts(prov)

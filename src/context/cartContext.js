@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import { collection, addDoc, doc, updateDoc, getFirestore, getDocs } from "firebase/firestore";
 
 export const ContextCart = createContext()
 export const CustomProvider = ( { children } ) => {
@@ -117,8 +118,56 @@ export const CustomProvider = ( { children } ) => {
         })
         return num
     }
+
+    const setOrder = ( subT, iv, dis, delivery, total, nameBuy, m, shipping) => {
+        const shippingCost = shipping
+        const mail = m
+        const name = nameBuy
+        const preTotal = subT + iv
+        const showItems = []
+        for(let i = 0; i < (localStorage.length); i++){
+            const newItemJason2 = localStorage.getItem(`item${i}`)
+            const itemNew = JSON.parse(newItemJason2)
+            if(itemNew.id){
+                showItems.push(itemNew)
+            }
+        }
+        let deliveryFinal
+        if(dis){
+            deliveryFinal = `Pick at store`
+        }
+        else{
+            deliveryFinal = `Sent to ${delivery}`
+        }
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let currentDate = `${day}/${month}/${year}`;
+        const newOrder = {
+            name: name,
+            mail: mail,
+            preTotal: preTotal,
+            total: total,
+            delivery: deliveryFinal,
+            orderDate: currentDate,
+            shippingCost: shippingCost,
+            items: showItems,
+        }
+        const db = getFirestore()
+        const orderColection = collection(db, 'orders')
+
+        showItems.map(( item ) => {
+            const updateStock = doc(db, 'items', item.id)
+            const newSto = item.stock - item.number
+            updateDoc(updateStock, {stock: newSto})
+        })
+
+        return  addDoc(orderColection, newOrder).then((y) => {return(y.id)})
+    }
+ 
     return(
-        <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart, clear, deleteItemAllS, plus, less }}>
+        <ContextCart.Provider value={{ cart, qty, total, addItem, numberInCart, clear, deleteItemAllS, plus, less, setOrder }}>
             {children}
         </ContextCart.Provider>
     )

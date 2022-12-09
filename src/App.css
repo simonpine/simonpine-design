@@ -425,7 +425,8 @@ background-size: 50% 2px;
   border-radius: 8px;
   height: 9px;
   outline: none;
-  -webkit-appearance: none;
+  appearance: none;
+  /* -webkit-appearance: none; */
   opacity: 0.5;
   transition: 0.5s;
 }
@@ -434,7 +435,7 @@ background-size: 50% 2px;
 }
 input[type='range']::-webkit-slider-thumb {
   width: 15px;
-  -webkit-appearance: none;
+  appearance: none;
   height: 15px;
   background: #BF9B6F;
   border-radius: 5px;
@@ -1043,4 +1044,9 @@ input[type='radio']:checked:after {
 }
 .reUsev{
   padding-bottom: 0px;
+}
+.lastButtonsCont{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

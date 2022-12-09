@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ProductsTest } from '../mocks/item.mock'
 import Layout from "../components/layout";
 import { CustomProvider } from "../context/cartContext";
-import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { collection, doc, getFirestore, getDoc } from "firebase/firestore"
 import {Link} from 'react-router-dom'
 import one from '../img/complemen/1.jpeg'
 import two from '../img/complemen/2.jpeg'
@@ -15,33 +15,16 @@ function ItemDetail(){
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
     const [mainImg, setMainImg] = useState('')
-    // const productsFromApi = new Promise((resolve) => {  setTimeout(()=>{resolve(ProductsTest)}, 2000)})
-    // useEffect(()=>{
-    //     productsFromApi.then((data) => {
-    //         data.forEach(element => {
-    //             if(element.id == params.id){
-    //                 setProduct(element)
-    //                 setMainImg(element.pictureUrl)
-    //             }
-    //         });
-    //     }).then((data)  => setLoading(!!data))
-    // }, [])
     useEffect(()=>{
+
         const db = getFirestore()
-        const itemsColection = collection(db, 'items')
-        getDocs(itemsColection).then((snap) => {
-            const prov = []
-            const pro = snap.docs.map((c) => {
-                let a = {...c.data()}
-                prov.push(a)
-                prov.forEach(element => {
-                    if(element.id == params.id){
-                        setProduct(element)
-                        setMainImg(element.pictureUrl)
-                    }
-                });
-            })
-            }).then((data)  => setLoading(!!data))
+        const itemUse = doc(db, 'items', `${params.id}`)
+        getDoc(itemUse).then((snap) => {
+            if(snap.exists()){
+                setProduct({...snap.data(), id: snap.id,})
+                setMainImg(snap.data().pictureUrl)
+            }
+        }).then((data)  => setLoading(!!data))
     }, [])
 
     return(
