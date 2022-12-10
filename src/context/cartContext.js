@@ -156,7 +156,7 @@ export const CustomProvider = ( { children } ) => {
         }
         const db = getFirestore()
         const orderColection = collection(db, 'orders')
-
+        console.log(showItems)
         showItems.map(( item ) => {
             const updateStock = doc(db, 'items', item.id)
             const newSto = item.stock - item.number

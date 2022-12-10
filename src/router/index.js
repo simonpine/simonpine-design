@@ -5,6 +5,8 @@ import About from "../views/about.js";
 import ItemDetail from "../views/itemsDetail.js";
 import Cart from "../views/cart.js";
 import Checkout from "../views/Checkout.js";
+import OrderSearch from "../views/orderSearch.js";
+import OrderDetail from "../views/orderDetail.js";
 
 export const router = createBrowserRouter([
     {
@@ -30,5 +32,13 @@ export const router = createBrowserRouter([
     {
         path: '/cart/checkout',
         element: <Checkout/>,
+    },
+    {
+        path: '/order',
+        element: <OrderSearch/>,
+    },
+    {
+        path: '/order/:id',
+        element: <OrderDetail />,
     }
 ])

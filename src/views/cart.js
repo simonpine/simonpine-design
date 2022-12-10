@@ -49,6 +49,7 @@ function CartView (){
                                         <h4 className='total'>Total: <div>${total}</div></h4>
                                     </div>
                                     <div className='k'>
+                                        <Link to={{pathname:"/order",}} className="clear l" >Search your orders</Link>
                                         <Link to={{pathname:"/Store/All"}} className='clear l'>Back to store</Link>
                                         <Link to={{pathname:"/cart/checkout"}} className='clear'>Checkout</Link>
                                     </div>

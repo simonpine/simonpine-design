@@ -939,6 +939,10 @@ background-size: 100% 1px;
   margin-top: 30px;
   width: 90%;
   padding: 2% 5% 2% 5%;
+  text-transform: none;
+}
+.search2::placeholder{
+  text-transform: uppercase;
 }
 .search2:disabled{
   opacity: 0.5;
@@ -1049,4 +1053,23 @@ input[type='radio']:checked:after {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+.orderSearchCont{
+  position: absolute;
+  left: 10vw;
+  width: 80vw;
+  min-height: 95vh;
+  top: 2.5vh;
+  display: flex;
+}
+.mat{
+  margin-top: 20px;
+}
+.mata{
+  margin-top: 18px;
+  width: 260px;
+  text-transform: none;
+}
+.title4{
+  margin: 0px;
 }
