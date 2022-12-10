@@ -1073,3 +1073,64 @@ input[type='radio']:checked:after {
 .title4{
   margin: 0px;
 }
+.h1Order{
+  width:auto;
+  display: flex;
+  font-size: 35px;
+  background-size: 0;
+  padding-bottom: 3px;
+}
+.h1Order div{
+  margin-left: 20px;
+}
+.DLI{
+  background-color: #BF9B6F;
+  width: fit-content;
+  padding: 1px 10px 1px 10px;
+  color: #0c0c0c;
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+.h2Order{
+  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+.firstOrder{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 130px;
+  justify-content: space-between
+}
+.orderDetail{
+    position: absolute;
+    right: 5vw;
+    width: 85vw;
+    top: 10vh;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start
+}
+.itemsOfOrder{
+  margin-top: 20px;
+  width: 100%;
+}
+.fin{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.g{
+  margin-right: 20px;
+}

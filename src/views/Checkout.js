@@ -21,7 +21,7 @@ function Checkout (){
                         {( { total, qty, setOrder } ) =>{
                             function setOrdeAction( evt ){
                                 evt.preventDefault();
-                                return Promise.resolve(setOrder(subTotal, iva, disa2, delivery, toTal, name, mail, shipping )).then((a) => navigate(`/orders/${a}`)).then(() => {localStorage.clear()})
+                                return Promise.resolve(setOrder(subTotal, iva, disa2, delivery, toTal, name, mail, shipping )).then((a) => navigate(`/order/${a}`)).then(() => {localStorage.clear()})
                             }
                             const initial = ( s ) => {
                                 let k = 0

@@ -137,7 +137,7 @@ export const CustomProvider = ( { children } ) => {
             deliveryFinal = `Pick at store`
         }
         else{
-            deliveryFinal = `Sent to ${delivery}`
+            deliveryFinal = `Sent to: ${delivery}`
         }
         const date = new Date();
         let day = date.getDate();
