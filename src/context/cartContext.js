@@ -162,7 +162,7 @@ export const CustomProvider = ( { children } ) => {
             const newSto = item.stock - item.number
             updateDoc(updateStock, {stock: newSto})
         })
-
+        clear()
         return  addDoc(orderColection, newOrder).then((y) => {return(y.id)})
     }
  
