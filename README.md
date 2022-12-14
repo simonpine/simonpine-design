@@ -10,11 +10,11 @@ E-commerce simulator builded with React.js and Firestore.
 ## Description
 
 The e-commerce is divided in 5 pages, home, store, about, cart and order.
-Home: Present the project and show 3 random items from the store (from firebase).
-About: It is only filler and does not contribute anything.
-Store: Is where the items are shown and can be filter by price, name, company and category.
-Cart: Is where the items that the user are going to buy are shown (works with localStorage), there the user can add and remove items, and see the price in real time. Also is where the user acces to the checkout.
-Order: After the user generates a purchase, he gets a code that can be used to see the details of that order.
+-Home: Present the project and show 3 random items from the store (from firebase).
+-About: It is only filler and does not contribute anything.
+-Store: Is where the items are shown and can be filter by price, name, company and category.
+-Cart: Is where the items that the user are going to buy are shown (works with localStorage), there the user can add and remove items, and see the price in real time. -Also is where the user acces to the checkout.
+-Order: After the user generates a purchase, he gets a code that can be used to see the details of that order.
 
 ## Libraries
 
