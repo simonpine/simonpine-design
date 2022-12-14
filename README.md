@@ -4,7 +4,7 @@ E-commerce simulator builded with React.js and Firestore.
 
 ## Deploy
 
-[oritsuru.netlify.app](https://simonpine-design.netlify.app/)
+[simonpine-design.netlify.app](https://simonpine-design.netlify.app/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a253097a-2925-4d33-bb21-7eb6cf663ab0/deploy-status)](https://app.netlify.com/sites/simonpine-design/deploys)
 
 ## Description
@@ -39,6 +39,7 @@ The e-commerce is divided in 5 pages, home, store, about, cart and order.
 
 - https://twitter.com/SimonPine2
 - simonpineda0521@gmail.com
+- https://www.linkedin.com/in/simon-pineda-0b8abb251
 
 ## Folder Structure
 
