@@ -35,6 +35,11 @@ The e-commerce is divided in 5 pages, home, store, about, cart and order.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
+## Contact
+
+- https://twitter.com/SimonPine2
+- simonpineda0521@gmail.com
+
 ## Folder Structure
 
 - `src`: Contains all the source code.
