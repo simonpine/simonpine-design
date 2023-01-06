@@ -45,7 +45,6 @@ export const CustomProvider = ( { children } ) => {
                     cartItem.number = cartItem.number + numNew
                     const itemJSON = JSON.stringify(cartItem);
                     localStorage.setItem(`item${i}`, itemJSON)
-                    console.log('yeah')
                     dontExist = false
                     localSto()
                 }
@@ -105,7 +104,7 @@ export const CustomProvider = ( { children } ) => {
     }
     const numberInCart = ( idSearch ) => {
         const a = []
-        let num
+        let num = 0
         for(let i = 0; i < (localStorage.length); i++){
             const newItemJason2 = localStorage.getItem(`item${i}`)
             const itemNew = JSON.parse(newItemJason2)
@@ -156,7 +155,6 @@ export const CustomProvider = ( { children } ) => {
         }
         const db = getFirestore()
         const orderColection = collection(db, 'orders')
-        console.log(showItems)
         showItems.map(( item ) => {
             const updateStock = doc(db, 'items', item.id)
             const newSto = item.stock - item.number

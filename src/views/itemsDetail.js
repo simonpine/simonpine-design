@@ -30,7 +30,7 @@ function ItemDetail(){
     return(
     <Layout a={'3'}> 
         <section className="itemDatail">
-            {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
+            {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
             <div className="img">
                 <div className="minImgCon">
                     <img className="mainImg" src={mainImg}/>

@@ -30,7 +30,7 @@ function CartView (){
                 <div className='productsInCartContainer'>
                     {showItems.map((item) => {
                             return(
-                                <ItemCartDetail porps={item} restart={restart}/>
+                                <ItemCartDetail key={item.id} porps={item} restart={restart}/>
                             )
                         })
                     }

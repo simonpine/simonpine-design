@@ -61,11 +61,11 @@ function Checkout (){
                                         <div className='deliCOn'>
                                             <div>
                                                 <input type='radio' id='1' value='1' name='a' onChange={m}></input>
-                                                <label className='Deli' for='1'>Pick at store</label>
+                                                <label className='Deli' htmlFor='1'>Pick at store</label>
                                             </div>
                                             <div>
                                                 <input type='radio' id='2' value='2' name='a' onChange={m}></input>
-                                                <label className='Deli' for='2'>Send home</label>
+                                                <label className='Deli' htmlFor='2'>Send home</label>
                                             </div>
                                         </div>
                                         <input disabled={disa2} type='text' onChange={(evt) => { setDelivery(evt.target.value) }} className='search search2' placeholder='Delivery address' required></input>

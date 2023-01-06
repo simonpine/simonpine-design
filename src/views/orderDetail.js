@@ -31,7 +31,7 @@ function OrderDetail() {
     return (
         <Layout a={'4'}>
             
-            {loading && <div className="loading"><div class="lds-dual-ring"></div></div>}
+            {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
             {exis ?
             <section className="orderDetail">
                 <div className="firstOrder">
@@ -47,7 +47,7 @@ function OrderDetail() {
                     products.map((item) => {
                         const price = item.price * item.number
                         return(
-                        <Link  to={{ pathname: `/Store/item/${item.id}` }}  className="ItemCartDetail">
+                        <Link key={item.id}  to={{ pathname: `/Store/item/${item.id}` }}  className="ItemCartDetail">
                             <div className="imgCartItemCon">
                                 <img className="imgCartItem" src={item.pictureUrl} />
                             </div>

@@ -20,12 +20,6 @@ function ItemListCate(){
             })
             setProducts(prov)
             }).then((data)  => setLoading(!!data))
-        // const itemRef = doc(db, 'items', '2c1zCv69zcFfXwAnpXw8')
-
-        // getDoc(itemRef).then((snap) => {
-        //     if(snap.exists()){
-        //         setProducts([snap.data()])
-        //     }
     }, [Items])
     const params = useParams()
     return(
@@ -48,24 +42,24 @@ function ItemListCate(){
                                 if(name == ''){
                                     if(!(+product.price > maxprice)){ 
                                         if(theCompany == 'all'){
-                                            if (params.category == 'All'){return <Items props={product}/>}
-                                            else if(params.category == product.category){return <Items props={product}/>}
+                                            if (params.category == 'All'){return <Items key={product.id} props={product}/>}
+                                            else if(params.category == product.category){return <Items key={product.id}  props={product}/>}
                                         }
                                         else if(theCompany == product.company){
-                                            if (params.category == 'All'){return <Items props={product}/>}
-                                            else if(params.category == product.category){return <Items props={product}/>}
+                                            if (params.category == 'All'){return <Items key={product.id}  props={product}/>}
+                                            else if(params.category == product.category){return <Items key={product.id}  props={product}/>}
                                         }
                                     }
                                 }
                                 else if(title2.includes(nameLow)){
                                     if(!(+product.price > maxprice)){ 
                                         if(theCompany == 'all'){
-                                            if (params.category == 'All'){return <Items props={product}/>}
-                                            else if(params.category == product.category){return <Items props={product}/>}
+                                            if (params.category == 'All'){return <Items key={product.id}  props={product}/>}
+                                            else if(params.category == product.category){return <Items key={product.id}  props={product}/>}
                                         }
                                         else if(theCompany == product.company){
-                                            if (params.category == 'All'){return <Items props={product}/>}
-                                            else if(params.category == product.category){return <Items props={product}/>}
+                                            if (params.category == 'All'){return <Items key={product.id}  props={product}/>}
+                                            else if(params.category == product.category){return <Items key={product.id}  props={product}/>}
                                         }
                                     }
                                 }

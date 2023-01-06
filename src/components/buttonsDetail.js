@@ -1,17 +1,15 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { ContextCart } from '../context/cartContext'
 function Buttons( { props } ) {
     const [actualCart, setActualCart] = useState(0)
-    const [inCart, setIncart] = useState('')
-    const newInCart = (a) =>{
-
-    }
     return(
+        
         <ContextCart.Consumer>
             {( { addItem, numberInCart } ) => {
-                const realStock = props.stock - inCart
+                
+                const realStock = props.stock - numberInCart(props.id)
                     function lessStock(){
-                        if(actualCart != 0){
+                        if(actualCart !== 0){
                             setActualCart(actualCart - 1)
                         }
                     }
@@ -20,23 +18,13 @@ function Buttons( { props } ) {
                             setActualCart(actualCart + 1)
                         }
                     }
-                function change(){
-                    if((numberInCart(props.id) != undefined) || (numberInCart(props.id) != null) ){
-                        setIncart(numberInCart(props.id))
-                    }
-                    else{
-                        setIncart(0)
-                    }
-                }
                 const g = () =>{
                     addItem(props, actualCart)
-                    change()
                     setActualCart(0)
                 }
-                change()
                 return(
                     <div>
-                        <h2 className="aditionalInfo">In cart: {inCart}</h2>
+                        <h2 className="aditionalInfo">In cart: {numberInCart(props.id) ? numberInCart(props.id) : 0}</h2>
                         <div className="allButtons">
                         <div className="moreLessBut">
                             <button className="secuButt" onClick={lessStock} >-</button>
