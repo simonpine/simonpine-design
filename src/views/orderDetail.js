@@ -72,8 +72,8 @@ function OrderDetail() {
                         <div className='title1'>
                         <img src={bag} alt="SimonPine logo" className='logoTitle'/>   
                              <div className='first'>
-                                <h1 className="errorH1">The order you are looking for don't exist</h1>
-                                <p className='pTitle'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.</p>
+                                <h1 className="errorH1">Error</h1>
+                                <p className='pTitle'>We're sorry, but the order you're looking for doesn't exist. Please double-check the details provided and contact our customer support team if you continue to experience issues.</p>
                                 <Link
                                 to={{
                                     pathname:"/order",

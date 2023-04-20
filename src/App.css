@@ -112,11 +112,19 @@ h5{
   position:absolute;
   left: 7vw;
   width: 80vw;
-  min-height: 97vh;
+  height: 95vh;
   top:3vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  overflow: auto;
+}
+.productContainer::-webkit-scrollbar{
+  width: 2px;
+}
+.productContainer::-webkit-scrollbar-thumb {
+  background:#BF9B6F; 
+  border-radius: 5px;
 }
 .lds-dual-ring {
   z-index: 100;
@@ -171,7 +179,7 @@ h5{
 .card{
   display: flex;
   width: 300px;
-  height: 380px;
+  height: 360px;
   border-radius: 20px;
   overflow: hidden;
   align-items: flex-start;
@@ -179,7 +187,7 @@ h5{
   background-color: #0c0c0c;
   box-shadow: rgba(105, 105, 105, 0.2) 0px 8px 24px;
   margin: 10px 33px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   transition: 0.5s;
 }
 .card:hover {
@@ -206,7 +214,7 @@ h5{
   background-size: 30% 2px;
 }
 .textCard{
-  padding: 15px;
+  padding: 10px;
 
 }
 .informationCard{
@@ -271,10 +279,13 @@ h1{
 }
 .pTitle{
   margin-top: 20px;
-  text-align: justify;
+  text-align: left;
   font: normal 16px/30px "Alegreya Sans",sans-serif;
   font-size: 20px;
   word-spacing: 5px;
+}
+.pTitle2{
+  text-align: right;
 }
 .first{
   width: 440px;
@@ -517,7 +528,7 @@ background-size: 100% 1px;
 }
 .cardsAbout{
   width: 250px;
-  height: 250px;
+  height:fit-content;
   background-color: #bf9b6f8c;
   border-radius: 20px;
   padding: 20px;
@@ -540,7 +551,7 @@ background-size: 100% 1px;
 }
 .secuImageCon{
   position: relative;
-  width: 60px;
+  width: 50px;
   background-color:#b69165 ;
   border-radius: 100%;
   padding: 30px;
@@ -553,13 +564,15 @@ background-size: 100% 1px;
 .h3About{
   font: normal 14px/17px "Alegreya Sans",sans-serif;
   font-size: 15px;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-size: 19px;
+  text-align: left;
+  line-height: normal;
 }
 .h2About{
   font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 .itemDatail{
   position:absolute;
@@ -767,7 +780,7 @@ background-size: 100% 1px;
 }
 .allButtonsCart{
   margin-right: 10px;
-  width: 200px;
+  width: 230px;
   display: flex;
   justify-content: space-between;
   z-index: 100;

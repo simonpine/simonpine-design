@@ -45,12 +45,11 @@ function CartView (){
                             return(
                                 <div className='confirmation'>
                                     <div className='k'>
-                                    <button className='butCart l' onClick={() => {clearAll()}}>x</button>
                                         <h4 className='total'>Total: <div>${total}</div></h4>
                                     </div>
                                     <div className='k'>
-                                        <Link to={{pathname:"/order",}} className="clear l" >Search your orders</Link>
-                                        <Link to={{pathname:"/Store/All"}} className='clear l'>Back to store</Link>
+                                        <button className='clear l' onClick={() => {clearAll()}}>Clear cart</button>
+                                        <Link to={{pathname:"/order",}} className="clear l" >Look other orders</Link>
                                         <Link to={{pathname:"/cart/checkout"}} className='clear'>Checkout</Link>
                                     </div>
                                 </div>
@@ -61,12 +60,12 @@ function CartView (){
                         <div className='title1'>
                              <div className='first'>
                                 <h1>The cart is empty</h1>
-                                <p className='pTitle'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.</p>
+                                <p className='pTitle'>Please take a moment to explore our store and discover the amazing products we have to offer.</p>
                                 <Link
                                 to={{
                                     pathname:"/Store/All",
                                 }}
-                                className="buyNow">Buy now</Link>
+                                className="buyNow">Explore the store</Link>
                             </div>
                             <img src={bag} alt="SimonPine logo" className='logoTitle'/>        
                         </div>

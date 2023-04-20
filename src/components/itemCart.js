@@ -26,7 +26,7 @@ function ItemCartDetail( { porps, restart } ){
                 <h2 className="titleCartItem h">${price}</h2>
                 <div>
                     <div className="allButtonsCart">
-                        <button className="butCart" onClick={() => {deleteAll()}}>x</button>
+                        <button className="clear r" onClick={() => {deleteAll()}}>Delete</button>
                         <div className="moreLessBut">
                             <button className="butCart" onClick={() => {lessAction()}}>-</button>
                             <h3 className="actualCart h">{porps.number}</h3>
