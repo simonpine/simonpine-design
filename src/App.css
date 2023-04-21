@@ -248,8 +248,8 @@ h5{
 }
 .homeContainer{
   position:absolute;
-  right: 10vw;
-  width: 80vw;
+  right: 20vw;
+  width: 60vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -275,7 +275,7 @@ h1{
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .pTitle{
   margin-top: 20px;
@@ -325,7 +325,7 @@ h1{
 .examples{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: initial;
   position: relative;
   margin-bottom: 13%;
   width: 100%;
@@ -336,7 +336,7 @@ h1{
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
   justify-content: center;
 }
 .itemId{
@@ -534,8 +534,8 @@ background-size: 100% 1px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center
-
+  align-items: center;
+  margin: 20px 20px 0px 20px;
 }
 .miViHI{
   position: relative;
@@ -733,8 +733,8 @@ background-size: 100% 1px;
 }
 .cartSpace{
   position: absolute;
-  left: 20vw;
-  width: 60vw;
+  left: 10vw;
+  width: 80vw;
   min-height: 97vh;
   top: 3vh;
 }
@@ -1069,8 +1069,8 @@ input[type='radio']:checked:after {
 }
 .orderSearchCont{
   position: absolute;
-  left: 10vw;
-  width: 80vw;
+  left: 20vw;
+  width: 60vw;
   min-height: 95vh;
   top: 2.5vh;
   display: flex;
@@ -1160,4 +1160,42 @@ input[type='radio']:checked:after {
 }
 .errorH1{
   font-size: 42px;
+}
+.logoTitle2{
+  width: 270px;
+}
+@media (max-width: 1500px) {
+  .productContainer{
+    width: 60vw;
+    left: 15vw;
+  }
+}
+@media (max-width: 1250px) {
+  .containerImageAbout{
+    display: none;
+  }
+  .logoTitle{
+    display: none;
+  }
+  .title{
+    justify-content: center
+  }
+  .examples{
+    align-items: center
+  }
+}
+@media (max-width: 1000px) {
+  .confirmationChek{
+    /* display: grid;
+    width: 100%;
+    min-height: 85vh; */
+    grid-template-rows: repeat(4, 390px);
+    grid-template-columns: 90%;
+    grid-template-areas: 
+    "Delivery"
+    "Purchase"
+    "PaymentMethod"
+    "PaymentMethod";
+    margin: 20px;
+  }
 }

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Layout from "../components/layout";
 import { doc, getFirestore, getDoc } from "firebase/firestore"
 import { Link } from 'react-router-dom'
-import bag from '../img/sho.png'
+import bag from '../img/warning.png'
 function OrderDetail() {
     const params = useParams()
     const [order, setOrder] = useState({})
@@ -70,7 +70,7 @@ function OrderDetail() {
             <section className="orderDetail">
                 <div className='centerOrder'>
                         <div className='title1'>
-                        <img src={bag} alt="SimonPine logo" className='logoTitle'/>   
+                        <img src={bag} alt="Warning Img" className='logoTitle logoTitle2'/>   
                              <div className='first'>
                                 <h1 className="errorH1">Error</h1>
                                 <p className='pTitle'>We're sorry, but the order you're looking for doesn't exist. Please double-check the details provided and contact our customer support team if you continue to experience issues.</p>
