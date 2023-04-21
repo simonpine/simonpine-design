@@ -11,21 +11,19 @@ function App() {
   const [a, setA] = useState({})
   const [b, setB] = useState({})
   const [c, setC] = useState({})
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(false)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const db = getFirestore()
     const itemsColection = collection(db, 'items')
     getDocs(itemsColection).then((snap) => {
-      const prov = []
-      const pro = snap.docs.map((c) => {
-        let a = { ...c.data(), id: c.id, }
-        prov.push(a)
-      })
-      setProducts(prov)
-      setA(prov[Math.floor(Math.random()*23)])
-      setB(prov[Math.floor(Math.random()*23)])
-      setC(prov[Math.floor(Math.random()*23)])
+      const aa = snap.docs[Math.floor(Math.random()*snap.docs.length)]
+      const bb = snap.docs[Math.floor(Math.random()*snap.docs.length)]
+      const cc = snap.docs[Math.floor(Math.random()*snap.docs.length)]
+      setA({ ...aa.data(), id: aa.id, })
+      setB({ ...bb.data(), id: bb.id, })
+      setC({ ...cc.data(), id: cc.id, })
+      setProducts(true)
     }).then((data) => setLoading(!!data))
   }, [])
   return (
@@ -48,13 +46,14 @@ function App() {
             <h2 className='secondTitle'>Examples</h2>
             <div className='exampleCards'>
               {loading && <div className="loading2"><div className="lds-dual-ring"></div></div>}
-              {products && products.map((product) => {
-                if ((product.title == a.title || product.title == b.title) || product.title == c.title) {
-                  return (
-                    <Items key={product.id} props={product} />
-                  )
-                }
-              })}
+              {products && (
+                <>
+                  <Items key={a.id} props={a} />
+                  <Items key={b.id} props={b} />
+                  <Items key={c.id} props={c} />
+                </>
+              )
+              }
             </div>
           </div>
         </div>
