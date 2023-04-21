@@ -1,49 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700|Eczar:400,700");
-html{
-  background:url(./img/bg.png) center center repeat fixed;
+
+html {
+  background: url(./img/bg.png) center center repeat fixed;
 }
-html::-webkit-scrollbar{
+
+html::-webkit-scrollbar {
   width: 2px;
 }
+
 html::-webkit-scrollbar-track {
   background-color: #0c0c0c;
 }
+
 html::-webkit-scrollbar-thumb {
-  background:#BF9B6F; 
+  background: #BF9B6F;
   border-radius: 5px;
 }
+
 * {
   margin: 0;
   padding: 0;
   color: #ffff;
 }
+
 .App {
   text-align: center;
 }
+
 .nav {
   height: 100px;
   width: 100vh;
-  position:fixed;
+  position: fixed;
   left: 0px;
   transform: rotate(-90deg) translate(-45%, -43vh);
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.has{
+
+.has {
   width: 50%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-.has li .a{
+
+.has li .a {
   padding-bottom: 10px;
-  opacity:0.5;
+  opacity: 0.5;
   transition: 0.5s ease;
   width: auto;
   background: linear-gradient(#BF9B6F, #BF9B6F);
@@ -53,11 +62,13 @@ html::-webkit-scrollbar-thumb {
   cursor: pointer;
   text-decoration: none;
 }
-.has li .a:hover{
-  opacity:1;
+
+.has li .a:hover {
+  opacity: 1;
   background-size: 50% 2px;
 }
-.tig{
+
+.tig {
   display: flex;
   width: 20%;
   justify-content: space-between;
@@ -65,21 +76,25 @@ html::-webkit-scrollbar-thumb {
   border-right: 1px solid #ffff;
   padding-right: 30px;
 }
+
 .socialMedia {
   width: 25px;
   transform: rotate(90deg);
-  opacity:0.5;
+  opacity: 0.5;
   transition: opacity 0.5s;
   display: flex;
   cursor: pointer;
 }
-.socialMedia:hover{
-  opacity:1;
+
+.socialMedia:hover {
+  opacity: 1;
 }
+
 ul {
   list-style: none;
 }
-.cart{
+
+.cart {
   height: 30px;
   padding-left: 10px;
   border: none;
@@ -87,7 +102,8 @@ ul {
   border-left: 1px solid #ffff;
   text-decoration: none;
 }
-.red{
+
+.red {
   right: -10px;
   top: -5px;
   border-radius: 20px;
@@ -101,31 +117,36 @@ ul {
   align-content: center;
   justify-content: center
 }
-h5{
+
+h5 {
   transform: translate(0, -2px);
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   color: #0c0c0c;
   font-size: 15px;
   font-weight: 700;
 }
-.productContainer{
-  position:absolute;
+
+.productContainer {
+  position: absolute;
   left: 7vw;
   width: 80vw;
   height: 95vh;
-  top:3vh;
+  top: 3vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   overflow: auto;
 }
-.productContainer::-webkit-scrollbar{
+
+.productContainer::-webkit-scrollbar {
   width: 2px;
 }
+
 .productContainer::-webkit-scrollbar-thumb {
-  background:#BF9B6F; 
+  background: #BF9B6F;
   border-radius: 5px;
 }
+
 .lds-dual-ring {
   z-index: 100;
   display: inline-block;
@@ -136,6 +157,7 @@ h5{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -147,15 +169,18 @@ h5{
   border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
-.loading{
+
+.loading {
   right: 0;
   top: 0;
   position: fixed;
@@ -164,19 +189,22 @@ h5{
   backdrop-filter: blur(5px);
   z-index: 100;
 }
-.imgCard{
+
+.imgCard {
   position: relative;
   height: 80%;
   min-width: 100%;
   transition: 1s;
 }
-.card:hover .imgCard{
-  opacity:0.35;
+
+.card:hover .imgCard {
+  opacity: 0.35;
   height: 85%;
   width: auto;
   filter: blur(6px);
 }
-.card{
+
+.card {
   display: flex;
   width: 300px;
   height: 360px;
@@ -190,12 +218,14 @@ h5{
   margin-bottom: 25px;
   transition: 0.5s;
 }
+
 .card:hover {
   box-shadow: rgb(95, 79, 57) 0px 8px 24px;
 }
-.titleCard{
+
+.titleCard {
   width: fit-content;
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 14px;
   background: linear-gradient(#BF9B6F, #BF9B6F);
   background-position: 0% 100%;
@@ -204,34 +234,39 @@ h5{
   transition: ease;
   transition: 1s;
   padding-bottom: 4px;
-  opacity:0.5;
+  opacity: 0.5;
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: left;
 }
-.card:hover .titleCard{
-  opacity:1;
+
+.card:hover .titleCard {
+  opacity: 1;
   background-size: 30% 2px;
 }
-.textCard{
+
+.textCard {
   padding: 10px;
 
 }
-.informationCard{
+
+.informationCard {
   text-align: left;
-  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font: normal 16px/30px "Alegreya Sans", sans-serif;
   transition: 1s;
   opacity: 0.5;
   font-size: 15px;
   letter-spacing: 2px;
 }
-.card:hover .informationCard{
+
+.card:hover .informationCard {
   opacity: 0;
   display: hide;
 }
-.hoverCard{
+
+.hoverCard {
   opacity: 0;
-  position:absolute;
+  position: absolute;
   transition: 0.5s;
   z-index: 10;
   width: 260px;
@@ -242,22 +277,25 @@ h5{
   align-items: center;
   justify-content: center;
 }
-.card:hover .hoverCard{
+
+.card:hover .hoverCard {
   opacity: 1;
   transition: 1s;
 }
-.homeContainer{
-  position:absolute;
+
+.homeContainer {
+  position: absolute;
   right: 20vw;
   width: 60vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-h1{
+
+h1 {
   text-align: left;
   width: 440px;
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 60px;
   color: #BF9B6F;
   line-height: 1.1;
@@ -267,35 +305,41 @@ h1{
   padding-bottom: 30px;
   background-size: 15% 15px;
 }
-.logoTitle{
+
+.logoTitle {
   width: 350px;
 }
-.title{
+
+.title {
   margin: 32vh 0 30vh 0;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
-.pTitle{
+
+.pTitle {
   margin-top: 20px;
   text-align: left;
-  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font: normal 16px/30px "Alegreya Sans", sans-serif;
   font-size: 20px;
   word-spacing: 5px;
 }
-.pTitle2{
+
+.pTitle2 {
   text-align: right;
 }
-.first{
+
+.first {
   width: 440px;
   display: flex;
   flex-direction: column;
   align-items: start;
 }
-.buyNow{
+
+.buyNow {
   margin-top: 15px;
-  font: normal 16px/30px "Alegreya Sans",sans-serif;
+  font: normal 16px/30px "Alegreya Sans", sans-serif;
   font-size: 22px;
   text-decoration: none;
   background: linear-gradient(#BF9B6F, #BF9B6F);
@@ -305,24 +349,28 @@ h1{
   color: #BF9B6F;
   transition: 1s ease;
 }
-.buyNow:hover{
+
+.buyNow:hover {
   background-position: 0% 100%;
   background-size: 100% 1px;
 }
-.exampleImage{
+
+.exampleImage {
   width: 200px;
   border-radius: 20px;
   margin: 20px 100px 20px 100px;
 }
-.secondTitle{
+
+.secondTitle {
   width: fit-content;
   position: relative;
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 60px;
   color: #BF9B6F;
   text-align: left;
 }
-.examples{
+
+.examples {
   display: flex;
   flex-direction: column;
   align-items: initial;
@@ -332,15 +380,17 @@ h1{
   left: 50%;
   transform: translate(-50%, 0%);
 }
-.exampleCards{
+
+.exampleCards {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
 }
-.itemId{
-  font: normal 16px/30px "Alegreya Sans",sans-serif;
+
+.itemId {
+  font: normal 16px/30px "Alegreya Sans", sans-serif;
   font-size: 15px;
   word-spacing: 5px;
   text-align: left;
@@ -348,28 +398,31 @@ h1{
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.categoryFilter{
+
+.categoryFilter {
   height: 100px;
   width: 100vh;
-  position:fixed;
+  position: fixed;
   right: 0px;
   display: flex;
   height: 90vh;
   top: 3vh;
   width: 200px;
-  position:fixed;
+  position: fixed;
   right: 0px;
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-.categoryFilter{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.categoryFilter {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-.b{
+
+.b {
   text-decoration: none;
   opacity: 0.5;
   background: linear-gradient(#BF9B6F, #BF9B6F);
@@ -380,17 +433,21 @@ h1{
   transition: 1s;
   padding-bottom: 10px;
 }
-.categoryFilter li{
+
+.categoryFilter li {
   margin: 10px;
 }
-.b:hover{
-opacity:1;
-background-size: 50% 2px;
+
+.b:hover {
+  opacity: 1;
+  background-size: 50% 2px;
 }
-.b2{
+
+.b2 {
   font-size: 15px;
 }
-.more{
+
+.more {
   padding: 60px 10px 60px 10px;
   transition: 0.5s;
   opacity: 0.5;
@@ -398,27 +455,32 @@ background-size: 50% 2px;
   height: 20%;
 
 }
-.more img{
+
+.more img {
   width: 35px;
 }
-.more:hover{
+
+.more:hover {
   opacity: 1;
 }
-.loading2{
+
+.loading2 {
   position: relative;
   height: 300px;
 }
-.companys{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.companys {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 5px;
   background-color: #0c0c0c;
 }
-.companysContainer{
+
+.companysContainer {
   margin-top: 10px;
   width: 80%;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -427,11 +489,13 @@ background-size: 50% 2px;
   border: 1px solid #BF9B6F;
   padding: 5px 10px 5px 10px;
 }
-.b3{
+
+.b3 {
   font-size: 15px;
   opacity: 0.5;
   margin: 5px 0 5px 0;
 }
+
 .range {
   border-radius: 8px;
   height: 9px;
@@ -441,9 +505,11 @@ background-size: 50% 2px;
   opacity: 0.5;
   transition: 0.5s;
 }
-.range:hover{
+
+.range:hover {
   opacity: 1;
 }
+
 input[type='range']::-webkit-slider-thumb {
   width: 15px;
   appearance: none;
@@ -451,7 +517,8 @@ input[type='range']::-webkit-slider-thumb {
   background: #BF9B6F;
   border-radius: 5px;
 }
-.b4{
+
+.b4 {
   text-decoration: none;
   color: #BF9B6F;
   background: linear-gradient(#BF9B6F, #BF9B6F);
@@ -463,33 +530,37 @@ input[type='range']::-webkit-slider-thumb {
   padding-bottom: 6px;
   font-weight: 600;
 }
-.b4:hover{
-background-position: 0% 100%;
-background-size: 100% 1px;
+
+.b4:hover {
+  background-position: 0% 100%;
+  background-size: 100% 1px;
 }
-.search{
+
+.search {
   background: none;
   border: #BF9B6F 1px solid;
   padding: 5px 10px 5px 10px;
   width: 70%;
   border-radius: 5px;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #ffff;
 }
-.productContainer:empty{
+
+.productContainer:empty {
   align-items: center;
 }
-.productContainer:empty::after{
+
+.productContainer:empty::after {
   position: relative;
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 40px;
   color: #BF9B6F;
   line-height: 1.1;
   content: 'Sorry, no products matched your search.';
-  width:fit-content;
+  width: fit-content;
   line-height: 1.1;
   background: linear-gradient(#BF9B6F, #BF9B6F);
   background-position: 0% 100%;
@@ -501,34 +572,40 @@ background-size: 100% 1px;
   top: -20px;
   z-index: -10;
 }
-.mainAbout{
+
+.mainAbout {
   background-position: 100% 100%;
   font-size: 50px;
 }
-.mainImageAbout{
+
+.mainImageAbout {
   width: 300px;
   transform: scaleX(-1);
 }
-.mainImageAbout2{
+
+.mainImageAbout2 {
   width: 170px;
   transform: translate(-50%, 0%);
 }
-.containerImageAbout{
+
+.containerImageAbout {
   background: linear-gradient(#BF9B6F, #BF9B6F);
   background-repeat: no-repeat;
   background-position: 68% 40%;
   background-size: 30px 60%;
 }
-.titleAbout{
+
+.titleAbout {
   margin: 30vh 0 30vh 0;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
 }
-.cardsAbout{
+
+.cardsAbout {
   width: 250px;
-  height:fit-content;
+  height: fit-content;
   background-color: #bf9b6f8c;
   border-radius: 20px;
   padding: 20px;
@@ -537,7 +614,8 @@ background-size: 100% 1px;
   align-items: center;
   margin: 20px 20px 0px 20px;
 }
-.miViHI{
+
+.miViHI {
   position: relative;
   margin: 30vh 0 30vh 0;
   display: flex;
@@ -546,38 +624,44 @@ background-size: 100% 1px;
   width: 90%;
   justify-content: space-evenly;
 }
-.secuImage{
+
+.secuImage {
   width: 100%;
 }
-.secuImageCon{
+
+.secuImageCon {
   position: relative;
   width: 50px;
-  background-color:#b69165 ;
+  background-color: #b69165;
   border-radius: 100%;
   padding: 30px;
   top: -90px;
 }
-.textCardAbout{
+
+.textCardAbout {
   position: relative;
   top: -75px;
 }
-.h3About{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.h3About {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   letter-spacing: 2px;
   font-size: 19px;
   text-align: left;
   line-height: normal;
 }
-.h2About{
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+
+.h2About {
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 30px;
   margin-bottom: 1px;
 }
-.itemDatail{
-  position:absolute;
+
+.itemDatail {
+  position: absolute;
   right: 5vw;
-  width: 85vw; 
+  width: 85vw;
   top: 5vh;
   min-height: 90vh;
   display: flex;
@@ -586,10 +670,12 @@ background-size: 100% 1px;
   justify-content: space-around;
   align-items: center;
 }
-.details{
+
+.details {
   width: 50%;
 }
-.btnImg{
+
+.btnImg {
   width: 70px;
   height: 70px;
   overflow: hidden;
@@ -598,7 +684,8 @@ background-size: 100% 1px;
   transition: 0.3s;
   margin: 4px;
 }
-.btnImg:hover{
+
+.btnImg:hover {
   border: #b69165 1px solid;
   width: 75px;
   height: 75px;
@@ -606,31 +693,36 @@ background-size: 100% 1px;
   position: relative;
   box-shadow: rgb(95 79 57) 0px 8px 24px;
 }
-.innerBtn{
-  width: 100%;
- height: 100%;
- object-fit: cover;
-}
-.img{
-  display: flex;
-  width: 30%;
-  flex-direction: column;
-  height: 100%;
-  
-}
-.mainImg{ 
+
+.innerBtn {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.minImgCon{
+
+.img {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.minImgCon {
   overflow: hidden;
   height: 450px;
   width: 100%;
   border-radius: 10px;
   box-shadow: rgba(105, 105, 105, 0.644) 0px 8px 24px;
 }
-.miniImg{
+
+.miniImg {
   left: -1%;
   position: relative;
   height: 80px;
@@ -640,20 +732,23 @@ background-size: 100% 1px;
   justify-content: space-between;
   align-items: center;
 }
-.pDetail{
+
+.pDetail {
   margin-top: 25px;
   margin-bottom: 25px;
   text-align: left;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   letter-spacing: 5px;
   font-size: 15px;
   line-height: 30px;
 }
-.h1{
+
+.h1 {
   margin-top: 30px;
   width: 100%;
 }
-.btnBack{
+
+.btnBack {
   text-decoration: none;
   color: #b69165;
   font-size: 20px;
@@ -667,39 +762,46 @@ background-size: 100% 1px;
   margin-bottom: 20px;
   font-weight: 600;
 }
-.btnBack:hover{
+
+.btnBack:hover {
   background-position: 0% 100%;
   background-size: 100% 1px;
 }
-.details{
+
+.details {
   display: flex;
   flex-direction: column;
   align-items: flex-start
 }
-.aditionalInfo{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.aditionalInfo {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   letter-spacing: 5px;
   font-size: 15px;
   margin-bottom: 10px;
   opacity: 0.7;
   text-align: left;
 }
-.priceInfo{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.priceInfo {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   letter-spacing: 5px;
   font-size: 20px;
   font-weight: 900;
   color: #BF9B6F;
   padding-bottom: 25px;
 }
-.allButtons{
+
+.allButtons {
   display: flex;
   margin-top: 20px;
 }
-.moreLessBut{
+
+.moreLessBut {
   display: flex;
 }
-.secuButt{
+
+.secuButt {
   width: 30px;
   height: 30px;
   background: none;
@@ -708,46 +810,52 @@ background-size: 100% 1px;
   font-size: 20px;
   font-weight: 100;
 }
-.secuButt:hover{
+
+.secuButt:hover {
   cursor: pointer;
   background-color: #b6926591;
 }
-.actualCart{
+
+.actualCart {
   margin: 0px 10px 0 10px;
   font-weight: 100;
   width: 20px;
 }
-.addCart{
+
+.addCart {
   letter-spacing: 5px;
   padding: 0 10px;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   margin-left: 10px;
   background: none;
   border: #b69165 1px solid;
   border-radius: 5px;
   font-size: 20px;
 }
-.addCart:hover{
+
+.addCart:hover {
   cursor: pointer;
   background-color: #b6926591;
 }
-.cartSpace{
+
+.cartSpace {
   position: absolute;
   left: 10vw;
   width: 80vw;
   min-height: 97vh;
   top: 3vh;
 }
+
 /* .confirmation{
   
 } */
-.ItemCartDetail{
+.ItemCartDetail {
   margin: 20px;
   max-width: 100%;
   min-height: 80px;
   background-color: #0c0c0c;
   border-radius: 20px;
-  box-shadow: rgba(255, 255, 255, 0.26) 0px 8px 24px; 
+  box-shadow: rgba(255, 255, 255, 0.26) 0px 8px 24px;
   display: flex;
   justify-content: space-between;
   transition: 0.5s;
@@ -757,35 +865,41 @@ background-size: 100% 1px;
   text-decoration: none;
   flex-wrap: wrap;
 }
-.ItemCartDetail:hover{
+
+.ItemCartDetail:hover {
   opacity: 1;
   box-shadow: rgb(95 79 57) 0px 8px 24px;
 }
-.imgCartItem{
+
+.imgCartItem {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.imgCartItemCon{
+
+.imgCartItemCon {
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
   width: 80px;
   height: 80px;
   border-radius: 15px;
 
 }
-.titleCartItem{
+
+.titleCartItem {
   width: 100px;
   text-align: left;
 }
-.allButtonsCart{
+
+.allButtonsCart {
   margin-right: 10px;
   width: 230px;
   display: flex;
   justify-content: space-between;
   z-index: 100;
 }
-.butCart{
+
+.butCart {
   width: 30px;
   height: 30px;
   background: none;
@@ -793,54 +907,64 @@ background-size: 100% 1px;
   border-radius: 5px;
   transition: 0.3s;
 }
-.butCart:hover{
+
+.butCart:hover {
   background-color: #b692657a;
   cursor: pointer;
 }
-.titleCartItem{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.titleCartItem {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 19px;
   letter-spacing: 5px;
 }
-.h{
+
+.h {
   font-size: 19px;
 }
-.title1{
+
+.title1 {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
 }
-.center{
+
+.center {
   height: 90vh;
   display: flex;
 }
-.total{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.total {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 20px;
   letter-spacing: 5px;
 
   display: flex;
 }
-.confirmation{
+
+.confirmation {
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.k{
+
+.k {
   display: flex;
   width: fit-content;
   margin-bottom: 15px;
   align-items: center
 }
-.total div{
+
+.total div {
   margin-left: 10px;
   font-weight: 600;
 }
-.clear{
+
+.clear {
   background: none;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   letter-spacing: 5px;
   padding: 5px 15px 5px 15px;
@@ -849,14 +973,17 @@ background-size: 100% 1px;
   transition: 0.3s;
   text-decoration: none;
 }
-.clear:hover{
+
+.clear:hover {
   cursor: pointer;
   background-color: #b692657a;
 }
-.l{
+
+.l {
   margin-right: 20px;
 }
-.checkpout{
+
+.checkpout {
   position: absolute;
   left: 10vw;
   width: 80vw;
@@ -866,7 +993,8 @@ background-size: 100% 1px;
   align-items: center;
   justify-content: center
 }
-.confirmationChek{
+
+.confirmationChek {
   display: grid;
   width: 100%;
   min-height: 85vh;
@@ -875,33 +1003,38 @@ background-size: 100% 1px;
   align-content: space-between;
   justify-content: space-evenly;
   grid-row-gap: 20px;
-  grid-template-areas: 
-  "Delivery PaymentMethod"
-  "Purchase PaymentMethod";
+  grid-template-areas:
+    "Delivery PaymentMethod"
+    "Purchase PaymentMethod";
+  margin: 20px;
 }
 
-.Purchase{
+.Purchase {
   grid-area: Purchase;
 }
-.Delivery{
+
+.Delivery {
   grid-area: Delivery;
 }
-.reUseP{
+
+.reUseP {
   height: 90%;
   width: 90%;
   background-color: #0c0c0c;
-  box-shadow: rgba(255, 255, 255, 0.13) 0px 8px 24px; 
+  box-shadow: rgba(255, 255, 255, 0.13) 0px 8px 24px;
   /* border: #b69165 1px solid; */
   border-radius: 25px;
   border: #b69165;
   transition: 0.3s;
   padding: 5% 5% 5% 5%;
 }
-.reUseP:hover{
+
+.reUseP:hover {
   box-shadow: rgba(119, 99, 70, 0.678) 0px 8px 24px;
 }
-.titlePa{
-  font:bold calc( 60px + 90 * ( ( 100vw - 400px ) / 1200 )) "Eczar",serif;
+
+.titlePa {
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
   font-size: 30px;
   margin-bottom: 10px;
   color: #b69165;
@@ -912,7 +1045,8 @@ background-size: 100% 1px;
   background-size: 30% 10px;
   width: fit-content;
 }
-.PaymentMethod{
+
+.PaymentMethod {
   grid-area: PaymentMethod;
   height: auto;
   display: flex;
@@ -921,48 +1055,58 @@ background-size: 100% 1px;
   align-items: flex-start;
   align-items: flex-end
 }
-.toTal{
+
+.toTal {
   padding-top: 30px;
-  border-top:1px rgba(255, 255, 255, 0.452) solid ;
+  border-top: 1px rgba(255, 255, 255, 0.452) solid;
   width: 100%;
 }
-.ko{
+
+.ko {
   margin-top: 5%;
   width: 100%;
   justify-content: space-between;
 }
-.ko div{
+
+.ko div {
   font-weight: 100;
 }
-.Deli{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.Deli {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 20px;
   letter-spacing: 5px;
   margin-left: 20px;
 }
-.deliCOn{
+
+.deliCOn {
   display: flex;
   flex-direction: column;
   align-items: flex-start
 }
-.deliCOn div{
+
+.deliCOn div {
   margin-top: 30px;
 }
-.search2{
+
+.search2 {
   margin-top: 30px;
   width: 90%;
   padding: 2% 5% 2% 5%;
   text-transform: none;
 }
-.search2::placeholder{
+
+.search2::placeholder {
   text-transform: uppercase;
 }
-.search2:disabled{
+
+.search2:disabled {
   opacity: 0.5;
 }
-.finish{
+
+.finish {
   background: none;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   letter-spacing: 5px;
   padding: 10px 25px 10px 25px;
@@ -972,17 +1116,21 @@ background-size: 100% 1px;
   text-decoration: none;
   font-size: 20px;
 }
-.finish:hover{
+
+.finish:hover {
   cursor: pointer;
   background-color: #b692657a;
 }
-.finish:disabled{
+
+.finish:disabled {
   opacity: 0.5;
 }
-.finish:disabled:hover{
-  cursor:auto;
-  background:none;
+
+.finish:disabled:hover {
+  cursor: auto;
+  background: none;
 }
+
 input[type='radio']:after {
   width: 15px;
   height: 15px;
@@ -996,6 +1144,7 @@ input[type='radio']:after {
   visibility: visible;
   border: 0.5px solid #b69165;
 }
+
 input[type='radio']:checked:after {
   width: 15px;
   height: 15px;
@@ -1009,13 +1158,14 @@ input[type='radio']:checked:after {
   visibility: visible;
   border: 0.5px solid #b69165;
 }
-.endCard{
+
+.endCard {
   position: absolute;
   margin: 5% 0px 5% 0px;
   bottom: 10px;
   width: 90%;
   height: 670px;
-  padding:5%;
+  padding: 5%;
   background-color: #0c0c0cdc;
   border-radius: 40px;
   border: #b69165 1px solid;
@@ -1023,51 +1173,62 @@ input[type='radio']:checked:after {
   backdrop-filter: blur(10px);
   transition: 1s ease;
 }
-.payM{
+
+.payM {
   display: grid;
   width: 100%;
   height: 500px;
-  grid-template-rows:repeat(5, 15%);
-  grid-template-columns:  repeat(2, 45%);
+  grid-template-rows: repeat(5, 15%);
+  grid-template-columns: repeat(2, 45%);
   align-content: space-between;
   justify-content: space-between;
-  grid-template-areas: 
-  "f f"
-  "g g"
-  "j j"
-  "e e"
-  "ex x";
+  grid-template-areas:
+    "f f"
+    "g g"
+    "j j"
+    "e e"
+    "ex x";
 }
-#ex{
+
+#ex {
   grid-area: ex;
 }
-.f{
+
+.f {
   grid-area: f;
 }
-.g{
+
+.g {
   grid-area: g;
 }
-.j{
+
+.j {
   grid-area: j;
 }
-.e{
+
+.e {
   grid-area: e;
 }
-.x{
+
+.x {
   grid-area: x;
 }
-.conpayme{
+
+.conpayme {
   width: 100%;
 }
-.reUsev{
+
+.reUsev {
   padding-bottom: 0px;
 }
-.lastButtonsCont{
+
+.lastButtonsCont {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.orderSearchCont{
+
+.orderSearchCont {
   position: absolute;
   left: 20vw;
   width: 60vw;
@@ -1075,44 +1236,52 @@ input[type='radio']:checked:after {
   top: 2.5vh;
   display: flex;
 }
-.mat{
+
+.mat {
   margin-top: 20px;
 }
-.mata{
+
+.mata {
   margin-top: 18px;
   width: 260px;
   text-transform: none;
 }
-.title4{
+
+.title4 {
   margin: 0px;
 }
-.h1Order{
-  width:auto;
+
+.h1Order {
+  width: auto;
   display: flex;
   font-size: 35px;
   background-size: 0;
   padding-bottom: 3px;
 }
-.h1Order div{
+
+.h1Order div {
   margin-left: 20px;
 }
-.DLI{
+
+.DLI {
   background-color: #BF9B6F;
   width: fit-content;
   padding: 1px 10px 1px 10px;
   color: #0c0c0c;
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   letter-spacing: 5px;
   font-weight: 600;
 }
-.h2Order{
-  font: normal 14px/17px "Alegreya Sans",sans-serif;
+
+.h2Order {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 20px;
   letter-spacing: 5px;
   font-weight: 100;
 }
-.firstOrder{
+
+.firstOrder {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -1120,22 +1289,25 @@ input[type='radio']:checked:after {
   height: 130px;
   justify-content: space-between
 }
-.orderDetail{
-    position: absolute;
-    right: 5vw;
-    width: 85vw;
-    top: 10vh;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start
+
+.orderDetail {
+  position: absolute;
+  right: 5vw;
+  width: 85vw;
+  top: 10vh;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start
 }
-.itemsOfOrder{
+
+.itemsOfOrder {
   margin-top: 20px;
   width: 100%;
 }
-.fin{
+
+.fin {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -1144,10 +1316,12 @@ input[type='radio']:checked:after {
   align-items: flex-end;
   width: 100%;
 }
-.g{
+
+.g {
   margin-right: 20px;
 }
-.centerOrder{
+
+.centerOrder {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -1155,47 +1329,90 @@ input[type='radio']:checked:after {
   align-items: center;
   flex-direction: column;
 }
-.met{
+
+.met {
   margin-bottom: 20px;
 }
-.errorH1{
+
+.errorH1 {
   font-size: 42px;
 }
-.logoTitle2{
+
+.logoTitle2 {
   width: 270px;
 }
+
 @media (max-width: 1500px) {
-  .productContainer{
-    width: 60vw;
-    left: 15vw;
+  .productContainer {
+    width: 55vw;
+    left: 17.5vw;
   }
 }
+
 @media (max-width: 1250px) {
-  .containerImageAbout{
+  .containerImageAbout {
     display: none;
   }
-  .logoTitle{
+
+  .logoTitle {
     display: none;
   }
-  .title{
+
+  .title {
     justify-content: center
   }
-  .examples{
+
+  .examples {
     align-items: center
   }
 }
+
 @media (max-width: 1000px) {
-  .confirmationChek{
-    /* display: grid;
-    width: 100%;
-    min-height: 85vh; */
+  .confirmationChek {
     grid-template-rows: repeat(4, 390px);
     grid-template-columns: 90%;
-    grid-template-areas: 
-    "Delivery"
-    "Purchase"
-    "PaymentMethod"
-    "PaymentMethod";
-    margin: 20px;
+    grid-template-areas:
+      "Delivery"
+      "Purchase"
+      "PaymentMethod"
+      "PaymentMethod";
+  }
+}
+
+@media (max-width: 750px) {
+  .imgCartItemCon{
+    grid-area: img;
+  }
+  .titleCartItem{
+    grid-area: title;
+  }
+  .priceCart{
+    grid-area: priceCart;
+  }
+  .but{
+    grid-area: but;
+    height: 100%;
+    flex-direction: column;
+  }
+  .allButtonsCart{
+    height: 100%;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+    justify-content: space-around
+  }
+  .deleteBut{
+    grid-area: deleteBut;
+  }
+  .ItemCartDetail {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: fit-content 30% 30%;
+    align-content: space-between;
+    justify-content: space-between;
+    grid-row-gap: 20px;
+    grid-template-areas:
+      "img title but"
+      "img priceCart but";
   }
 }
