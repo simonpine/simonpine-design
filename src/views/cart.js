@@ -56,7 +56,7 @@ function CartView() {
                             )
                         }}
                     </ContextCart.Consumer> :
-                    <div className='center'>
+                    <div className='center errorSect'>
                         <div className='title1'>
                             <div className='first'>
                                 <h1>The cart is empty</h1>
