@@ -23,6 +23,12 @@ html::-webkit-scrollbar-thumb {
   color: #ffff;
 }
 
+.closeButtonFilters{
+  display: none;
+}
+.filterButtomMobile{
+  display: none;
+}
 .App {
   text-align: center;
 }
@@ -1437,7 +1443,7 @@ input[type='radio']:checked:after {
     background: none;
     border: none;
     position: fixed;
-    width: 40px;
+    width: 30px;
     right: 20px;
     top: 20px;
   }
@@ -1469,7 +1475,7 @@ input[type='radio']:checked:after {
   .clolseButton {
     background: none;
     border: none;
-    width: 35px;
+    width: 25px;
   }
 
   .cover {
@@ -1484,14 +1490,6 @@ input[type='radio']:checked:after {
     transition: 0.7s ease;
   }
 
-  .right0 {
-    right: 0%;
-  }
-
-  .left0 {
-    left: 0%;
-  }
-
   .has {
     width: 100%;
     height: 250px;
@@ -1500,12 +1498,12 @@ input[type='radio']:checked:after {
   }
 
   .has li .a {
-    font-size: 20px;
+    font-size: 15px;
     background-position: 100% 100%;
   }
 
   .socialMedia {
-    width: 25px;
+    width: 20px;
     transform: rotate(0deg);
 
   }
@@ -1521,8 +1519,8 @@ input[type='radio']:checked:after {
     z-index: 8;
     border: none;
     position: fixed;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     top: 20px;
     left: 20px;
     padding: 0px;
@@ -1532,8 +1530,8 @@ input[type='radio']:checked:after {
     transform: rotate(0deg);
     right: -70%;
     top: -120%;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 
   .red h5 {
@@ -1547,7 +1545,7 @@ input[type='radio']:checked:after {
 
   .nav2Cont {
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-color: #0c0c0cd3;
     position: fixed;
     z-index: 90;
@@ -1618,5 +1616,64 @@ input[type='radio']:checked:after {
   .miViHI{
       width: 90%;
       left: 0%;
+  }
+  .mainAbout{
+    background-position: 0% 100%;
+  }
+  .pTitle2{
+    text-align: left;
+  }
+  .categoryFilter{
+    top: 0px;
+    padding: 5vh 5vw;
+    background-color: #0c0c0c;
+    z-index: 100;
+    transition: 0.7s ease;
+    width: fit-content;
+    right: -100%;
+  }
+  .closeButtonFilters{
+    align-self: flex-end;
+    display: block;
+  }
+  .search{
+    width: 90%;
+  }
+  #company{
+    width: 100%;
+  }
+  .filterButtomMobile{
+    position: fixed;
+    width: 35px;
+    border-radius: 10px;
+    height: 35px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #b69165;
+    border: none;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .filterButtomMobile img{
+    width: 60%;
+    height: 60%;
+  }
+  .right0 {
+    right: 0%;
+  }
+
+  .left0 {
+    left: 0%;
+  }
+  .more{
+    z-index: 3;
+  }
+  .productContainer{
+   width: 100vw;
+   left: 0px;
+   height: 90vh;
+   top: 10vh;
   }
 }

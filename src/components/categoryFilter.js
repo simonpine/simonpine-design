@@ -3,12 +3,24 @@ import { Link } from 'react-router-dom'
 import FilterByCompany from './filterCompany.js'
 import FilterByPrice from './priceFilter.js'
 import FilterByName from './nameFilter.js'
+import close from '../img/close.png';
+import fill from '../img/filter-filled-tool-symbol.png'
 import { Context } from '../context/companyContext'
 import { Context2 } from '../context/priceContext'
 import { Context3 } from '../context/nameContext'
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 function CategoryFilter({ main }) {
+    const [cover, setCover] = useState('')
+    const [nav, setNav] = useState('')
+    function out() {
+        setCover('')
+        setNav('')
+    }
+    function inF() {
+        setCover('left0')
+        setNav('right0')
+    }
     const [categorys, setCategorys] = useState([])
 
     useEffect(() => {
@@ -28,8 +40,13 @@ function CategoryFilter({ main }) {
         seven.backgroundSize = "50% 2px"
     }
     return (
-        <div>
-            <ul className="categoryFilter">
+        <>
+            <div onClick={out} className={`cover ${cover}`}></div>
+            <button onClick={inF} className={`filterButtomMobile`}><img src={fill}></img></button>
+            <ul className={`categoryFilter ${nav}`}>
+                <li className='closeButtonFilters'>
+                    <button onClick={out} className='clolseButton'><img alt='close button' src={close}></img></button>
+                </li>
                 <Context3.Consumer>
                     {({ setName }) => {
                         return (
@@ -78,32 +95,32 @@ function CategoryFilter({ main }) {
                                     <FilterByCompany otherCompany={setTheCompany} />
                                 </li>
                                 <Context2.Consumer>
-                                    {({setmaxprice, maxprice }) => {
+                                    {({ setmaxprice, maxprice }) => {
                                         return (
                                             <>
-                                            <li>
-                                                <h2 className='b2'>max price:</h2>
-                                                <h2 className='b3'>${maxprice}</h2>
-                                                <FilterByPrice otherPrice={setmaxprice} />
-                                            </li>
-                                            <Context3.Consumer>
-                                                {({ setName }) => {
-                                                    const clearAll = (evt) => {
-                                                        setTheCompany('all')
-                                                        setmaxprice('3100')
-                                                        setName('')
-                                                    }
-                                                    return (
-                                                        <li>
-                                                            <Link onClick={clearAll} className='b4'
-                                                                to={{
-                                                                    pathname: "/Store/All",
-                                                                }}
-                                                            >clear Filters</Link>
-                                                        </li>
-                                                    )
-                                                }}
-                                            </Context3.Consumer>
+                                                <li>
+                                                    <h2 className='b2'>max price:</h2>
+                                                    <h2 className='b3'>${maxprice}</h2>
+                                                    <FilterByPrice otherPrice={setmaxprice} />
+                                                </li>
+                                                <Context3.Consumer>
+                                                    {({ setName }) => {
+                                                        const clearAll = (evt) => {
+                                                            setTheCompany('all')
+                                                            setmaxprice('3100')
+                                                            setName('')
+                                                        }
+                                                        return (
+                                                            <li>
+                                                                <Link onClick={clearAll} className='b4'
+                                                                    to={{
+                                                                        pathname: "/Store/All",
+                                                                    }}
+                                                                >clear Filters</Link>
+                                                            </li>
+                                                        )
+                                                    }}
+                                                </Context3.Consumer>
                                             </>
                                         )
                                     }}
@@ -113,7 +130,7 @@ function CategoryFilter({ main }) {
                     }}
                 </Context.Consumer>
             </ul>
-        </div>
+        </>
     )
 }
 export default CategoryFilter;
