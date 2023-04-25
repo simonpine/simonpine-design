@@ -51,9 +51,9 @@ function OrderDetail() {
                             <div className="imgCartItemCon">
                                 <img className="imgCartItem" src={item.pictureUrl} />
                             </div>
-                            <h2 className="titleCartItem"> {item.title}</h2>
-                            <h2 className="titleCartItem h">${price}</h2>
-                            <div>
+                            <h2 className="titleCartItem titleOrder"> {item.title}</h2>
+                            <h2 className="titleCartItem h priceOrder">${price}</h2>
+                            <div className="numIOrd">
                                 <h3 className="actualCart h">{item.number}</h3>
                             </div>
                         </Link>

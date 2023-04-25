@@ -23,12 +23,14 @@ html::-webkit-scrollbar-thumb {
   color: #ffff;
 }
 
-.closeButtonFilters{
+.closeButtonFilters {
   display: none;
 }
-.filterButtomMobile{
+
+.filterButtomMobile {
   display: none;
 }
+
 .App {
   text-align: center;
 }
@@ -1315,7 +1317,7 @@ input[type='radio']:checked:after {
 }
 
 .fin {
-  margin-top: 20px;
+  margin: 20px 0px;
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -1395,8 +1397,20 @@ input[type='radio']:checked:after {
     grid-area: img;
   }
 
+  .numIOrd {
+    grid-area: numIOrd;
+  }
+
   .titleCartItem {
     grid-area: title;
+  }
+
+  .titleOrder {
+    grid-area: title;
+  }
+
+  .priceOrder {
+    grid-area: price;
   }
 
   .priceCart {
@@ -1600,7 +1614,8 @@ input[type='radio']:checked:after {
     align-items: center;
   }
 
-  .title, .titleAbout {
+  .title,
+  .titleAbout {
     margin-top: 25vh;
     width: 90%;
     left: 5%;
@@ -1614,17 +1629,21 @@ input[type='radio']:checked:after {
     width: 90%;
     left: 45%;
   }
-  .miViHI{
-      width: 90%;
-      left: 0%;
+
+  .miViHI {
+    width: 90%;
+    left: 0%;
   }
-  .mainAbout{
+
+  .mainAbout {
     background-position: 0% 100%;
   }
-  .pTitle2{
+
+  .pTitle2 {
     text-align: left;
   }
-  .categoryFilter{
+
+  .categoryFilter {
     top: 0px;
     padding: 5vh 5vw;
     background-color: #0c0c0c;
@@ -1633,17 +1652,21 @@ input[type='radio']:checked:after {
     width: fit-content;
     right: -100%;
   }
-  .closeButtonFilters{
+
+  .closeButtonFilters {
     align-self: flex-end;
     display: block;
   }
-  .search{
+
+  .search {
     width: 90%;
   }
-  #company{
+
+  #company {
     width: 100%;
   }
-  .filterButtomMobile{
+
+  .filterButtomMobile {
     position: fixed;
     width: 35px;
     border-radius: 10px;
@@ -1657,10 +1680,12 @@ input[type='radio']:checked:after {
     justify-content: center;
     align-items: center;
   }
-  .filterButtomMobile img{
+
+  .filterButtomMobile img {
     width: 60%;
     height: 60%;
   }
+
   .right0 {
     right: 0%;
   }
@@ -1668,13 +1693,112 @@ input[type='radio']:checked:after {
   .left0 {
     left: 0%;
   }
-  .more{
+
+  .more {
     z-index: 3;
   }
-  .productContainer{
-   width: 100vw;
-   left: 0px;
-   height: 90vh;
-   top: 10vh;
+
+  .productContainer {
+    width: 100vw;
+    left: 0px;
+    height: fit-content;
+    top: 65px;
+  }
+
+  .loading {
+    left: 0px;
+    width: 100%;
+  }
+
+  .titleAbout,
+  .title {
+    margin: 15px 0px 15px;
+  }
+
+  .miViHI {
+    margin: 100px 0px 35px;
+  }
+
+  .homeContainer {
+    top: 70px;
+  }
+
+  .itemDatail {
+    flex-direction: column-reverse;
+    width: 90vw;
+    top: 85px;
+  }
+
+  .img {
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .h1 {
+    margin: 0px;
+  }
+
+  .h1Order {
+    width: 100%;
+    flex-direction: column;
+    font-size: 6vw;
+    align-items: center
+  }
+
+  .firstOrder h2 {
+    margin-left: 0px;
+    font-size: 5vw;
+  }
+
+  .h1Order div {
+    margin-left: 0px;
+  }
+
+  .orderDetail {
+    width: 90vw;
+    left: 5vw;
+  }
+
+  .firstOrder {
+    width: 100%;
+    margin: 0px;
+    align-items: center
+  }
+
+  .DLI {
+    display: none;
+  }
+
+  .itemsOfOrder .ItemCartDetail {
+    grid-template-areas:
+      "img title numIOrd"
+      "img price numIOrd";
+  }
+  .fin{
+    align-items: center;
+  }
+  .g{
+    margin: 0px;
+  }
+}
+
+@media (max-width: 370px) {
+  .ItemCartDetail {
+    grid-template-rows: 40% 40%;
+    grid-template-columns: 40% 40%;
+    grid-row-gap: 10px;
+    justify-items: center;
+    grid-template-areas:
+      "title but"
+      "priceCart but";
+  }
+
+  .imgCartItemCon {
+    display: none;
   }
 }
